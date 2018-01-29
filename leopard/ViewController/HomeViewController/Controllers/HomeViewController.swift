@@ -14,7 +14,10 @@ class HomeViewController: UITabBarController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        if !isLogin {
+        
+        if let syusrinfString = UserDefaults.standard.string(forKey: "Syusrinf"), let syusrinf = Syusrinf.deserialize(from: syusrinfString) {
+            LoginViewController.loginAutomatic(syusrinf)
+        } else {
             let storyBoard = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             self.present(loginViewController, animated: true, completion: nil)

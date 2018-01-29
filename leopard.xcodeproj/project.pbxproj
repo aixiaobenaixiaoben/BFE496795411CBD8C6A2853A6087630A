@@ -736,7 +736,7 @@
 				);
 				INFOPLIST_FILE = leopard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.leopard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.harbor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "leopard/Main/leopard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -758,7 +758,7 @@
 				);
 				INFOPLIST_FILE = leopard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.leopard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.harbor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "leopard/Main/leopard-Bridging-Header.h";
 				SWIFT_VERSION = 3.4;

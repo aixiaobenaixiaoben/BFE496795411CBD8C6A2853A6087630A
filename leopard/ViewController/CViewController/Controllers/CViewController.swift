@@ -15,7 +15,7 @@ class CViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if isLogin {
+        if LoginViewController.isLogin {
             logoutButton.isHidden = false
         } else {
             logoutButton.isHidden = true
@@ -29,12 +29,13 @@ class CViewController: UIViewController {
             response in
             
             if Response<String>.success(response) {
+                UserDefaults.standard.set(nil, forKey: "Syusrinf")
                 print("Logout Success")
                 let alert = UIAlertController(title: nil, message: "Logout Success", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: {
                     alertAction in
                     
-                    isLogin = false
+                    LoginViewController.isLogin = false
                     self.logoutButton.isEnabled = true
                     self.logoutButton.isHidden = true
                 })
@@ -46,7 +47,7 @@ class CViewController: UIViewController {
                 let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: {
                     alertAction in
-                    isLogin = false
+                    LoginViewController.isLogin = false
                     self.logoutButton.isEnabled = true
                 })
                 alert.addAction(action)

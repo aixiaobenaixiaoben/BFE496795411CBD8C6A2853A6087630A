@@ -14,7 +14,7 @@ class AViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if isLogin {
+        if LoginViewController.isLogin {
             loginButton.isHidden = true
         } else {
             loginButton.isHidden = false

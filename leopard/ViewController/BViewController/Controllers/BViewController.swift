@@ -16,13 +16,13 @@ class BViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if isLogin {
+        if LoginViewController.isLogin {
             userCountLabel.isHidden = false
         } else {
             userCountLabel.isHidden = true
         }
         
-        if isLogin {
+        if LoginViewController.isLogin {
             Alamofire.request(SERVER + "index/hello.action", method: .post).responseString {
                 response in
                 if let data = Response<String>.data(response) {

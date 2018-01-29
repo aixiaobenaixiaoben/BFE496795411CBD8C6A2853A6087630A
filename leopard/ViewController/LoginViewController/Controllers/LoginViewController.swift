@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     
     var syusrinf: Syusrinf!
+    static var isLogin: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +55,10 @@ class LoginViewController: UIViewController {
             response in
             
             if let data = Response<Syusrinf>.data(response) {
+                UserDefaults.standard.set(self.syusrinf.toJSONString(), forKey: "Syusrinf")
                 print(data.toJSONString(prettyPrint: true)!)
                 self.syusrinf = data
-                isLogin = true
+                LoginViewController.isLogin = true
                 self.dismiss(animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {
@@ -71,6 +73,17 @@ class LoginViewController: UIViewController {
         }
     }
     
+    static func loginAutomatic(_ syusrinf: Syusrinf) {
+        Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
+            response in
+            if Response<Syusrinf>.data(response) != nil {
+                LoginViewController.isLogin = true
+            } else  {
+                LoginViewController.isLogin = false
+                UserDefaults.standard.set(nil, forKey: "Syusrinf")
+            }
+        }
+    }
 
     @IBAction func loadRegisterApplyView(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
@@ -85,7 +98,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func backHome(_ sender: UIButton) {
-        isLogin = true
+        LoginViewController.isLogin = true
         self.dismiss(animated: true, completion: nil)
     }
     
