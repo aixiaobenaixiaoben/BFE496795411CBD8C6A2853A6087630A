@@ -98,6 +98,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func backHome(_ sender: UIButton) {
+        syusrinf = Syusrinf()
+        syusrinf.suimobile = "15925648080"
+        syusrinf.suipaswrd = "3E677D133FEC4B263E4365F9C36DAB72"
+        UserDefaults.standard.set(self.syusrinf.toJSONString(), forKey: "Syusrinf")
         LoginViewController.isLogin = true
         self.dismiss(animated: true, completion: nil)
     }

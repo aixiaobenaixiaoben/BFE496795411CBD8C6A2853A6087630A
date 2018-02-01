@@ -30,7 +30,6 @@
 		0A4E3E92200B616400D1B685 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E3E91200B616400D1B685 /* Login.storyboard */; };
 		0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9D200B671A00D1B685 /* AViewController.swift */; };
 		0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9F200B67FA00D1B685 /* BViewController.swift */; };
-		0A4E3EA2200B680F00D1B685 /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3EA1200B680F00D1B685 /* CViewController.swift */; };
 		0A61A9212004CD5200302336 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; };
 		0A61A9222004CD5200302336 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */; };
@@ -40,6 +39,9 @@
 		0ADAE3692005D1AF006CB2DE /* Syusrinf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADAE3682005D1AF006CB2DE /* Syusrinf.swift */; };
 		0ADECD1F2008450300FFCA73 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADECD1E2008450300FFCA73 /* LoginViewController.swift */; };
 		0ADECD21200849B400FFCA73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADECD20200849B400FFCA73 /* HomeViewController.swift */; };
+		0AF8CA682022D77100B0A687 /* CTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8CA672022D77100B0A687 /* CTableViewController.swift */; };
+		0AF8CA6A20235CC000B0A687 /* C.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF8CA6920235CC000B0A687 /* C.storyboard */; };
+		0AF8CA6C20235D2B00B0A687 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8CA6B20235D2B00B0A687 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +107,6 @@
 		0A4E3E91200B616400D1B685 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0A4E3E9D200B671A00D1B685 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		0A4E3E9F200B67FA00D1B685 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
-		0A4E3EA1200B680F00D1B685 /* CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
 		0A61A91D2004CD4100302336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPrivacyViewController.swift; sourceTree = "<group>"; };
 		0ADAE35E2005B663006CB2DE /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = SOURCE_ROOT; };
@@ -113,6 +114,9 @@
 		0ADAE3682005D1AF006CB2DE /* Syusrinf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syusrinf.swift; sourceTree = "<group>"; };
 		0ADECD1E2008450300FFCA73 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0ADECD20200849B400FFCA73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0AF8CA672022D77100B0A687 /* CTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTableViewController.swift; sourceTree = "<group>"; };
+		0AF8CA6920235CC000B0A687 /* C.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = C.storyboard; sourceTree = "<group>"; };
+		0AF8CA6B20235D2B00B0A687 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +324,7 @@
 		0A4E3E9A200B660100D1B685 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0AF8CA6920235CC000B0A687 /* C.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,7 +339,8 @@
 		0A4E3E9C200B660E00D1B685 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E3EA1200B680F00D1B685 /* CViewController.swift */,
+				0AF8CA672022D77100B0A687 /* CTableViewController.swift */,
+				0AF8CA6B20235D2B00B0A687 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF8CA6A20235CC000B0A687 /* C.storyboard in Resources */,
 				0A4E3E92200B616400D1B685 /* Login.storyboard in Resources */,
 				0A3C250520048E7B00CD6FD0 /* LaunchScreen.storyboard in Resources */,
 				0A3C250220048E7B00CD6FD0 /* Assets.xcassets in Resources */,
@@ -545,6 +552,7 @@
 				0A4C8CBA200F572D002EFD52 /* Syvrymbl.swift in Sources */,
 				0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
+				0AF8CA6C20235D2B00B0A687 /* ProfileViewController.swift in Sources */,
 				0ADAE3672005B764006CB2DE /* Response.swift in Sources */,
 				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
 				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,
@@ -555,8 +563,8 @@
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
 				0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */,
 				0ADECD21200849B400FFCA73 /* HomeViewController.swift in Sources */,
+				0AF8CA682022D77100B0A687 /* CTableViewController.swift in Sources */,
 				0A09D583200CE7C2000C487E /* ResetInfoViewController.swift in Sources */,
-				0A4E3EA2200B680F00D1B685 /* CViewController.swift in Sources */,
 				0A09D57B200CE74D000C487E /* RegisterInfoViewController.swift in Sources */,
 				0A09D577200CE700000C487E /* RegisterApplyViewController.swift in Sources */,
 				0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */,
