@@ -14,6 +14,7 @@ class RegisterInfoViewController: UIViewController {
     @IBOutlet weak var suiusrnamField: UITextField!
     @IBOutlet weak var suipaswrdField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var syusrinf: Syusrinf!
     
@@ -25,6 +26,7 @@ class RegisterInfoViewController: UIViewController {
     }
     
     @IBAction func checkValid(_ sender: UITextField) {
+        messageLabel.text = nil
         if let suiusrnam = suiusrnamField.text, suiusrnam.verifyUsername(), let suipaswrd = suipaswrdField.text, suipaswrd.verifyPassword() {
             registerButton.isEnabled = true
         } else {
@@ -55,11 +57,8 @@ class RegisterInfoViewController: UIViewController {
                 self.present(registerEndViewController, animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {
+                self.messageLabel.text = error
                 print("Error: " + error)
-                let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
             }
             self.registerButton.isEnabled = true
         }

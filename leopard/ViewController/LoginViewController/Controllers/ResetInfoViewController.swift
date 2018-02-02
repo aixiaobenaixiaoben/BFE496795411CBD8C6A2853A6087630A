@@ -13,6 +13,7 @@ class ResetInfoViewController: UIViewController {
     
     @IBOutlet weak var suipaswrdField: UITextField!
     @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var syusrinf: Syusrinf!
     
@@ -23,6 +24,7 @@ class ResetInfoViewController: UIViewController {
     }
     
     @IBAction func checkValid(_ sender: UITextField) {
+        messageLabel.text = nil
         if let suipaswrd = suipaswrdField.text, suipaswrd.verifyPassword() {
             resetButton.isEnabled = true
         } else {
@@ -51,11 +53,8 @@ class ResetInfoViewController: UIViewController {
                 self.present(resetEndViewController, animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {
+                self.messageLabel.text = error
                 print("Error: " + error)
-                let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
             }
             self.resetButton.isEnabled = true
         }

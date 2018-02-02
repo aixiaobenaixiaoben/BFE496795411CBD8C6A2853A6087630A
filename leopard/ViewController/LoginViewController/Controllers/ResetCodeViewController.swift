@@ -14,6 +14,7 @@ class ResetCodeViewController: UIViewController {
     @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var svmvrycodField: UITextField!
     @IBOutlet weak var verifyButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var syusrinf: Syusrinf!
     var syvrymbl: Syvrymbl!
@@ -28,6 +29,7 @@ class ResetCodeViewController: UIViewController {
     }
     
     @IBAction func checkValid(_ sender: UITextField) {
+        messageLabel.text = nil
         if let svmvrycod = svmvrycodField.text, svmvrycod.verifyDigit(len: 6) {
             verifyButton.isEnabled = true
         } else {
@@ -55,11 +57,8 @@ class ResetCodeViewController: UIViewController {
                 self.present(resetInfoViewController, animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {
+                self.messageLabel.text = error
                 print("Error: " + error)
-                let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
             }
             self.verifyButton.isEnabled = true
         }
@@ -70,18 +69,11 @@ class ResetCodeViewController: UIViewController {
             response in
             
             if Response<String>.success(response) {
-                //TODO: - 提示已经发送验证码，10分钟后过期
-                let alert = UIAlertController(title: nil, message: "Resend verify code successfully, the code will expire after 10 minutes", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+                self.view.makeToast(NSLocalizedString("SEND_VERIFY_CODE_SUCCESSFULLY", comment: "message when send verify code which expires after 10 minutes"))
                 
             } else if let error = Response<String>.error(response) {
+                self.view.makeToast(NSLocalizedString("ERROR: ", comment: "preffix of error message") + error)
                 print("Error: " + error)
-                let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
             }
         }
     }

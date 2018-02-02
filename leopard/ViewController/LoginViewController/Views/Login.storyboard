@@ -73,13 +73,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKg-tB-Pnd">
-                                <rect key="frame" x="126" y="318" width="123" height="30"/>
+                                <rect key="frame" x="126" y="340" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Forget Password?"/>
                                 <connections>
                                     <action selector="loadResetApplyView:" destination="wzc-FB-4PV" eventType="touchUpInside" id="oMA-hp-SYz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjO-GS-iQ9">
+                                <rect key="frame" x="16" y="302" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -90,6 +97,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="6WA-CJ-FyX" id="8b4-wZ-FoJ"/>
+                        <outlet property="messageLabel" destination="QjO-GS-iQ9" id="jbY-KH-Wd1"/>
                         <outlet property="registerButton" destination="bY5-iK-fiN" id="EWZ-Pa-iXk"/>
                         <outlet property="resetButton" destination="mKg-tB-Pnd" id="fUp-xA-S42"/>
                         <outlet property="suimobileField" destination="lpz-R0-Lmo" id="Fkn-mq-4zb"/>
@@ -171,6 +179,13 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA8-JF-ePg">
+                                <rect key="frame" x="16" y="265" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -180,6 +195,7 @@ and can opt out at any time</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="lA8-JF-ePg" id="UA3-C6-lo2"/>
                         <outlet property="sendVerifyButton" destination="seq-ME-Bcb" id="iSe-AP-jEg"/>
                         <outlet property="suimobileField" destination="0d9-8R-S0l" id="grZ-wg-Q3S"/>
                     </connections>
@@ -220,7 +236,7 @@ and can opt out at any time</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6-digit code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fsw-GJ-Hrb">
-                                <rect key="frame" x="16" y="226" width="343" height="30"/>
+                                <rect key="frame" x="16" y="245" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -229,18 +245,9 @@ and can opt out at any time</string>
                                     <action selector="checkValid:" destination="Kgg-xB-mH2" eventType="editingChanged" id="ASE-yI-4ln"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Confirmation Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Oq-7D4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirmation Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Oq-7D4">
                                 <rect key="frame" x="16" y="167" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLn-wD-scV">
-                                <rect key="frame" x="16" y="264" width="343" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Enter the 6-digit code we sent to
-+86</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -260,13 +267,29 @@ and can opt out at any time</string>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PP-Ed-2br">
-                                <rect key="frame" x="120" y="313" width="135" height="30"/>
+                                <rect key="frame" x="120" y="340" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Request a new one."/>
                                 <connections>
                                     <action selector="resendVerifyCode:" destination="Kgg-xB-mH2" eventType="touchUpInside" id="uI5-dR-yQW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSj-4X-rMC">
+                                <rect key="frame" x="16" y="283" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLn-wD-scV">
+                                <rect key="frame" x="16" y="196" width="343" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Enter the 6-digit code we sent to
++86</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -276,6 +299,7 @@ and can opt out at any time</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="eSj-4X-rMC" id="qNo-LA-zSF"/>
                         <outlet property="svmvrycodField" destination="fsw-GJ-Hrb" id="hNS-YW-zk6"/>
                         <outlet property="tipsLabel" destination="eLn-wD-scV" id="J69-Gs-33W"/>
                         <outlet property="verifyButton" destination="PwB-HH-DF0" id="tPK-Ov-Inm"/>
@@ -317,7 +341,7 @@ and can opt out at any time</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-tg-abV">
-                                <rect key="frame" x="16" y="225" width="343" height="30"/>
+                                <rect key="frame" x="16" y="203" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -349,7 +373,7 @@ and can opt out at any time</string>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3u7-v3-SoH">
-                                <rect key="frame" x="16" y="263" width="343" height="30"/>
+                                <rect key="frame" x="16" y="241" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -360,7 +384,7 @@ and can opt out at any time</string>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-Zg-tax">
-                                <rect key="frame" x="16" y="301" width="343" height="21"/>
+                                <rect key="frame" x="16" y="312" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">By singing up, you agree to our 
 </string>
@@ -369,13 +393,20 @@ and can opt out at any time</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-Sv-bLV">
-                                <rect key="frame" x="108" y="330" width="159" height="30"/>
+                                <rect key="frame" x="108" y="341" width="159" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Terms &amp; Privacy Policy."/>
                                 <connections>
                                     <action selector="showPrivacyPolicy:" destination="qxV-4X-kAH" eventType="touchUpInside" id="tiN-6b-ig4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adI-ed-iHa">
+                                <rect key="frame" x="16" y="279" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -385,6 +416,7 @@ and can opt out at any time</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="adI-ed-iHa" id="K3v-bl-uUa"/>
                         <outlet property="registerButton" destination="ZMT-mG-hOA" id="2av-7h-znm"/>
                         <outlet property="suipaswrdField" destination="3u7-v3-SoH" id="YFH-sC-St0"/>
                         <outlet property="suiusrnamField" destination="bG5-tg-abV" id="auU-Wi-ZCf"/>
@@ -512,6 +544,13 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AR-QH-6aw">
+                                <rect key="frame" x="16" y="265" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -521,6 +560,7 @@ and can opt out at any time</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="9AR-QH-6aw" id="L6s-7z-ka9"/>
                         <outlet property="sendVerifyButton" destination="dnj-FL-Fvu" id="z3t-ch-yxe"/>
                         <outlet property="suimobileField" destination="on1-0i-0uw" id="VRq-gk-Hqr"/>
                     </connections>
@@ -532,7 +572,7 @@ and can opt out at any time</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1398" y="775"/>
+            <point key="canvasLocation" x="1397.5999999999999" y="774.96251874062978"/>
         </scene>
         <!--Reset Code View Controller-->
         <scene sceneID="MaA-5J-hLZ">
@@ -561,7 +601,7 @@ and can opt out at any time</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6-digit code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5iM-Cr-z8r">
-                                <rect key="frame" x="16" y="226" width="343" height="30"/>
+                                <rect key="frame" x="16" y="245" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -570,7 +610,7 @@ and can opt out at any time</string>
                                     <action selector="checkValid:" destination="UIt-pC-dDC" eventType="editingChanged" id="AaJ-L4-m3J"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Confirmation Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGn-Ci-p6k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirmation Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGn-Ci-p6k">
                                 <rect key="frame" x="16" y="167" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -578,7 +618,7 @@ and can opt out at any time</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6j-F1-FhH">
-                                <rect key="frame" x="16" y="264" width="343" height="41"/>
+                                <rect key="frame" x="16" y="196" width="343" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Enter the 6-digit code we sent to
 +86</string>
@@ -601,13 +641,20 @@ and can opt out at any time</string>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A10-6p-edi">
-                                <rect key="frame" x="120" y="313" width="135" height="30"/>
+                                <rect key="frame" x="120" y="340" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Request a new one."/>
                                 <connections>
                                     <action selector="resendResetVerifyCode:" destination="UIt-pC-dDC" eventType="touchUpInside" id="bQ6-hk-gtC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-jk-vJI">
+                                <rect key="frame" x="16" y="283" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -617,6 +664,7 @@ and can opt out at any time</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="sDZ-jk-vJI" id="Y6H-Bu-1yc"/>
                         <outlet property="svmvrycodField" destination="5iM-Cr-z8r" id="HDL-du-X3B"/>
                         <outlet property="tipsLabel" destination="F6j-F1-FhH" id="QiX-2y-KJm"/>
                         <outlet property="verifyButton" destination="3Ih-AS-XKg" id="Xpe-Sa-mIP"/>
@@ -629,7 +677,7 @@ and can opt out at any time</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2034" y="775"/>
+            <point key="canvasLocation" x="2032.8" y="774.96251874062978"/>
         </scene>
         <!--Reset Info View Controller-->
         <scene sceneID="1hh-r5-5oE">
@@ -689,6 +737,13 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtj-XB-Cpm">
+                                <rect key="frame" x="16" y="263" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -698,6 +753,7 @@ and can opt out at any time</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="Wtj-XB-Cpm" id="4QD-rH-w0F"/>
                         <outlet property="resetButton" destination="Nz8-6I-Grt" id="pRb-s1-PyN"/>
                         <outlet property="suipaswrdField" destination="aBL-XG-Ooo" id="yNp-6n-W3q"/>
                     </connections>
@@ -709,7 +765,7 @@ and can opt out at any time</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2662" y="775"/>
+            <point key="canvasLocation" x="2661.5999999999999" y="774.96251874062978"/>
         </scene>
         <!--Reset End View Controller-->
         <scene sceneID="FUI-8Q-k88">

@@ -32,6 +32,7 @@
 		0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9F200B67FA00D1B685 /* BViewController.swift */; };
 		0A61A9212004CD5200302336 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; };
 		0A61A9222004CD5200302336 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0A656DEF2024822300E72E6E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A656DEE2024822300E72E6E /* Toast.swift */; };
 		0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */; };
 		0ADAE3602005B698006CB2DE /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADAE35E2005B663006CB2DE /* HandyJSON.framework */; };
 		0ADAE3612005B698006CB2DE /* HandyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADAE35E2005B663006CB2DE /* HandyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -108,6 +109,7 @@
 		0A4E3E9D200B671A00D1B685 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		0A4E3E9F200B67FA00D1B685 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		0A61A91D2004CD4100302336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		0A656DEE2024822300E72E6E /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPrivacyViewController.swift; sourceTree = "<group>"; };
 		0ADAE35E2005B663006CB2DE /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = SOURCE_ROOT; };
 		0ADAE3662005B764006CB2DE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 		0A61A91C2004CCFD00302336 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				0A656DEE2024822300E72E6E /* Toast.swift */,
 				0ADAE35E2005B663006CB2DE /* HandyJSON.framework */,
 				0A61A91D2004CD4100302336 /* Alamofire.framework */,
 			);
@@ -568,6 +571,7 @@
 				0A09D57B200CE74D000C487E /* RegisterInfoViewController.swift in Sources */,
 				0A09D577200CE700000C487E /* RegisterApplyViewController.swift in Sources */,
 				0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */,
+				0A656DEF2024822300E72E6E /* Toast.swift in Sources */,
 				0A09D57F200CE788000C487E /* ResetApplyViewController.swift in Sources */,
 				0A3C24F820048E7B00CD6FD0 /* AppDelegate.swift in Sources */,
 			);
@@ -749,7 +753,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "leopard/Main/leopard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.4;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -770,7 +774,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "leopard/Main/leopard-Bridging-Header.h";
 				SWIFT_VERSION = 3.4;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

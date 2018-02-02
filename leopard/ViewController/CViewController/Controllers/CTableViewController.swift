@@ -84,9 +84,11 @@ class CTableViewController: UITableViewController {
     
     func logout(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
         
-        let alert = UIAlertController(title: "LOG_OUT_CONFIRM", message: "CONFIRM_TO_LOG_OUT", preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-        let confirmAction = UIAlertAction(title: "CONFIRM", style: .default, handler: {
+        let alert = UIAlertController(title: NSLocalizedString("LOG_OUT_CONFIRM", comment: "log out confirm title"),
+                                      message: NSLocalizedString("LOG_OUT_CONFIRM_MESSAGE", comment: "log out confirm message"),
+                                      preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("CANCEL", comment: "cancel action"), style: .cancel, handler: nil)
+        let confirmAction = UIAlertAction(title: NSLocalizedString("CONFIRM", comment: "confirm action"), style: .default, handler: {
             action in
             
             UserDefaults.standard.set(nil, forKey: "Syusrinf")
