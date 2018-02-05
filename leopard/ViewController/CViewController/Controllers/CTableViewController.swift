@@ -69,8 +69,9 @@ class CTableViewController: UITableViewController {
     func loadProfileView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
         let storyBoard = UIStoryboard(name: "C", bundle: nil)
         let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        profileViewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        self.navigationController?.pushViewController(profileViewController, animated: true)
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
+//        profileNavigationController.navigationBar.barStyle = .blackTranslucent
+        self.present(profileNavigationController, animated: true, completion: nil)
     }
     
     func loadNotificationView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {

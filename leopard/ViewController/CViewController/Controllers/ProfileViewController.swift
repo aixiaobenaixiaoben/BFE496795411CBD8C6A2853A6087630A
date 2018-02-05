@@ -20,4 +20,18 @@ class ProfileViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
 
+    @IBAction func Back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func Next(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let profileChangeViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileChangeViewController") as! ProfileChangeViewController
+        
+        profileChangeViewController.navigationItem.title = "Verification Code"
+        let button = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = button
+        
+        self.navigationController?.pushViewController(profileChangeViewController, animated: true)
+    }
 }
