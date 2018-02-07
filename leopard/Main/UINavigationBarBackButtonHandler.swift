@@ -56,5 +56,30 @@ extension UINavigationController: UINavigationBarDelegate {
 }
 
 
+/*
+/// Useage
+class SomeController: UIViewController{
+    /**
+     ......
+     do something
+     */
+    
+    override func shouldPopOnBackButton() -> Bool {
+        /**
+         do something
+         return false/true
+         */
+    }
+    
+    // Handle the pop gesture
+    override func willMove(toParentViewController parent: UIViewController?) {
+        if parent == nil { // When the user swipe to back, the parent is nil
+            do something
+            return
+        }
+        super.willMove(toParentViewController: parent)
+    }
+}
+*/
 
 

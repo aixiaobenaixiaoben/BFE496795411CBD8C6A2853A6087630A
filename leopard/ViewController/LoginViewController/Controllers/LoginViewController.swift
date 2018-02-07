@@ -57,7 +57,8 @@ class LoginViewController: UIViewController {
             response in
             
             if let data = Response<Syusrinf>.data(response) {
-                UserDefaults.standard.set(self.syusrinf.toJSONString(), forKey: "Syusrinf")
+                data.suipaswrd = self.syusrinf.suipaswrd
+                UserDefaults.standard.set(data.toJSONString(), forKey: "Syusrinf")
                 print(data.toJSONString(prettyPrint: true)!)
                 self.syusrinf = data
                 LoginViewController.isLogin = true

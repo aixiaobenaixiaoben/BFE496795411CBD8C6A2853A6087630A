@@ -16,7 +16,7 @@
 		0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D580200CE79C000C487E /* ResetCodeViewController.swift */; };
 		0A09D583200CE7C2000C487E /* ResetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D582200CE7C2000C487E /* ResetInfoViewController.swift */; };
 		0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D584200CE878000C487E /* ResetEndViewController.swift */; };
-		0A158F3E2028C81000853AA0 /* ProfileChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A158F3D2028C81000853AA0 /* ProfileChangeViewController.swift */; };
+		0A158F3E2028C81000853AA0 /* ModPhoneVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A158F3D2028C81000853AA0 /* ModPhoneVerifyViewController.swift */; };
 		0A158F50202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A158F4F202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift */; };
 		0A20200E200E4368009941EF /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20200D200E4368009941EF /* ExtensionString.swift */; };
 		0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20200F200E43DC009941EF /* ExtensionArray.swift */; };
@@ -44,7 +44,7 @@
 		0ADECD21200849B400FFCA73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADECD20200849B400FFCA73 /* HomeViewController.swift */; };
 		0AF8CA682022D77100B0A687 /* CTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8CA672022D77100B0A687 /* CTableViewController.swift */; };
 		0AF8CA6A20235CC000B0A687 /* C.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF8CA6920235CC000B0A687 /* C.storyboard */; };
-		0AF8CA6C20235D2B00B0A687 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8CA6B20235D2B00B0A687 /* ProfileViewController.swift */; };
+		0AF8CA6C20235D2B00B0A687 /* ModPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8CA6B20235D2B00B0A687 /* ModPhoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,7 @@
 		0A09D580200CE79C000C487E /* ResetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCodeViewController.swift; sourceTree = "<group>"; };
 		0A09D582200CE7C2000C487E /* ResetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetInfoViewController.swift; sourceTree = "<group>"; };
 		0A09D584200CE878000C487E /* ResetEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetEndViewController.swift; sourceTree = "<group>"; };
-		0A158F3D2028C81000853AA0 /* ProfileChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileChangeViewController.swift; sourceTree = "<group>"; };
+		0A158F3D2028C81000853AA0 /* ModPhoneVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModPhoneVerifyViewController.swift; sourceTree = "<group>"; };
 		0A158F4F202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarBackButtonHandler.swift; sourceTree = "<group>"; };
 		0A202008200E3F2A009941EF /* leopard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "leopard-Bridging-Header.h"; sourceTree = "<group>"; };
 		0A20200D200E4368009941EF /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		0ADECD20200849B400FFCA73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0AF8CA672022D77100B0A687 /* CTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTableViewController.swift; sourceTree = "<group>"; };
 		0AF8CA6920235CC000B0A687 /* C.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = C.storyboard; sourceTree = "<group>"; };
-		0AF8CA6B20235D2B00B0A687 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0AF8CA6B20235D2B00B0A687 /* ModPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModPhoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,8 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				0AF8CA672022D77100B0A687 /* CTableViewController.swift */,
-				0AF8CA6B20235D2B00B0A687 /* ProfileViewController.swift */,
-				0A158F3D2028C81000853AA0 /* ProfileChangeViewController.swift */,
+				0AF8CA6B20235D2B00B0A687 /* ModPhoneViewController.swift */,
+				0A158F3D2028C81000853AA0 /* ModPhoneVerifyViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -561,8 +561,8 @@
 				0A4C8CBA200F572D002EFD52 /* Syvrymbl.swift in Sources */,
 				0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
-				0A158F3E2028C81000853AA0 /* ProfileChangeViewController.swift in Sources */,
-				0AF8CA6C20235D2B00B0A687 /* ProfileViewController.swift in Sources */,
+				0A158F3E2028C81000853AA0 /* ModPhoneVerifyViewController.swift in Sources */,
+				0AF8CA6C20235D2B00B0A687 /* ModPhoneViewController.swift in Sources */,
 				0ADAE3672005B764006CB2DE /* Response.swift in Sources */,
 				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
 				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,

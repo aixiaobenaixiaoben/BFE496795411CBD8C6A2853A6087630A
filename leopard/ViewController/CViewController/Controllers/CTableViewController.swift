@@ -67,17 +67,16 @@ class CTableViewController: UITableViewController {
     }
     
     func loadProfileView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
-        let storyBoard = UIStoryboard(name: "C", bundle: nil)
-        let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
-//        profileNavigationController.navigationBar.barStyle = .blackTranslucent
-        self.present(profileNavigationController, animated: true, completion: nil)
     }
     
     func loadNotificationView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
     }
     
     func loadPhoneView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let modPhoneVC = storyBoard.instantiateViewController(withIdentifier: "ModPhoneViewController") as! ModPhoneViewController
+        let modPhoneNC = UINavigationController(rootViewController: modPhoneVC)
+        self.present(modPhoneNC, animated: true, completion: nil)
     }
     
     func loadPasswordView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
