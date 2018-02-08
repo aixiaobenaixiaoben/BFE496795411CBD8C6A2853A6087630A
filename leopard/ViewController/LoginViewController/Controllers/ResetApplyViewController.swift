@@ -15,8 +15,6 @@ class ResetApplyViewController: UIViewController {
     @IBOutlet weak var sendVerifyButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     
-    var syusrinf: Syusrinf!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         sendVerifyButton.isEnabled = false
@@ -38,7 +36,7 @@ class ResetApplyViewController: UIViewController {
     
     @IBAction func loadResetCodeView(_ sender: UIButton) {
         sendVerifyButton.isEnabled = false
-        syusrinf = Syusrinf()
+        let syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         
         Alamofire.request(SERVER + "user/sendResetVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
@@ -47,7 +45,7 @@ class ResetApplyViewController: UIViewController {
             if Response<String>.success(response) {
                 let storyBoard = UIStoryboard(name: "Login", bundle: nil)
                 let resetCodeViewController = storyBoard.instantiateViewController(withIdentifier: "ResetCodeViewController") as! ResetCodeViewController
-                resetCodeViewController.syusrinf = self.syusrinf
+                resetCodeViewController.syusrinf = syusrinf
                 self.present(resetCodeViewController, animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {

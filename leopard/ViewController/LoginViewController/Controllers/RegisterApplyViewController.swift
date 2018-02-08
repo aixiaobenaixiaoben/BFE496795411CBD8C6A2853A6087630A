@@ -15,8 +15,6 @@ class RegisterApplyViewController: UIViewController {
     @IBOutlet weak var sendVerifyButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     
-    var syusrinf: Syusrinf!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         sendVerifyButton.isEnabled = false
@@ -38,7 +36,7 @@ class RegisterApplyViewController: UIViewController {
     
     @IBAction func loadRegisterCodeVIew(_ sender: UIButton) {
         sendVerifyButton.isEnabled = false
-        syusrinf = Syusrinf()
+        let syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         
         Alamofire.request(SERVER + "user/sendRegisterVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
@@ -47,7 +45,7 @@ class RegisterApplyViewController: UIViewController {
             if Response<String>.success(response) {
                 let storyBoard = UIStoryboard(name: "Login", bundle: nil)
                 let registerCodeViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterCodeViewController") as! RegisterCodeViewController
-                registerCodeViewController.syusrinf = self.syusrinf
+                registerCodeViewController.syusrinf = syusrinf
                 self.present(registerCodeViewController, animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {

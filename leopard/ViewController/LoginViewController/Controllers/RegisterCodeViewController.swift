@@ -17,7 +17,6 @@ class RegisterCodeViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     
     var syusrinf: Syusrinf!
-    var syvrymbl: Syvrymbl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +42,7 @@ class RegisterCodeViewController: UIViewController {
     
     @IBAction func loadRegisterInfoView(_ sender: UIButton) {
         verifyButton.isEnabled = false
-        syvrymbl = Syvrymbl()
+        let syvrymbl = Syvrymbl()
         syvrymbl.svmmobile = syusrinf.suimobile
         syvrymbl.svmvrycod = svmvrycodField.text?.trimmingCharacters(in: .whitespaces)
         

@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     
-    var syusrinf: Syusrinf!
     static var isLogin: Bool = false
     
     override func viewDidLoad() {
@@ -49,7 +48,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: UIButton) {
         loginButton.isEnabled = false
-        syusrinf = Syusrinf()
+        let syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         syusrinf.suipaswrd = suipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()
         
@@ -57,10 +56,9 @@ class LoginViewController: UIViewController {
             response in
             
             if let data = Response<Syusrinf>.data(response) {
-                data.suipaswrd = self.syusrinf.suipaswrd
+                data.suipaswrd = syusrinf.suipaswrd
                 UserDefaults.standard.set(data.toJSONString(), forKey: "Syusrinf")
                 print(data.toJSONString(prettyPrint: true)!)
-                self.syusrinf = data
                 LoginViewController.isLogin = true
                 self.dismiss(animated: true, completion: nil)
                 
@@ -75,7 +73,10 @@ class LoginViewController: UIViewController {
     static func loginAutomatic(_ syusrinf: Syusrinf) {
         Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
             response in
-            if Response<Syusrinf>.data(response) != nil {
+            if let data = Response<Syusrinf>.data(response) {
+                data.suipaswrd = syusrinf.suipaswrd
+                UserDefaults.standard.set(data.toJSONString(), forKey: "Syusrinf")
+                print(data.toJSONString(prettyPrint: true)!)
                 LoginViewController.isLogin = true
             } else  {
                 LoginViewController.isLogin = false
@@ -97,10 +98,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func backHome(_ sender: UIButton) {
-        syusrinf = Syusrinf()
+        let syusrinf = Syusrinf()
         syusrinf.suimobile = "15925648080"
         syusrinf.suipaswrd = "3E677D133FEC4B263E4365F9C36DAB72"
-        UserDefaults.standard.set(self.syusrinf.toJSONString(), forKey: "Syusrinf")
+        UserDefaults.standard.set(syusrinf.toJSONString(), forKey: "Syusrinf")
         LoginViewController.isLogin = true
         self.dismiss(animated: true, completion: nil)
     }
