@@ -24,6 +24,10 @@ class HomeViewController: UITabBarController {
                         print("--log in after HomeViewController viewdidappear")
                         print(data.toJSONString(prettyPrint: true)!)
                         LoginViewController.isLogin = true
+                        
+                        if let aVC = self.selectedViewController as? AViewController {
+                            aVC.reloadData()
+                        }
                     } else  {
                         UserDefaults.standard.set(nil, forKey: "Syusrinf")
                         self.loadLoginView()
@@ -33,10 +37,6 @@ class HomeViewController: UITabBarController {
                 loadLoginView()
             }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
     func loadLoginView() {

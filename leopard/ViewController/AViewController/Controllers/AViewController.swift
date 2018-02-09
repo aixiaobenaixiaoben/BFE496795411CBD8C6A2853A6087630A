@@ -26,5 +26,9 @@ class AViewController: UIViewController {
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(loginViewController, animated: true, completion: nil)
     }
+    
+    public func reloadData() {
+        loginButton.isHidden = true
+    }
 
 }
