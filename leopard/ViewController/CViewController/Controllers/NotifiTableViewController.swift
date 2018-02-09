@@ -27,12 +27,8 @@ class NotifiTableViewController: UITableViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    override func willMove(toParentViewController parent: UIViewController?) {
-        if parent == nil {
-            UserDefaults.standard.set(notifiSwitch.isOn, forKey: "notifiSwitch")
-            return
-        }
-        super.willMove(toParentViewController: parent)
+    @IBAction func valueChanged(_ sender: Any) {
+        UserDefaults.standard.set(notifiSwitch.isOn, forKey: "notifiSwitch")
     }
 
 
