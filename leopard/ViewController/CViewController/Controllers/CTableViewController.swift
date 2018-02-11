@@ -72,7 +72,9 @@ class CTableViewController: UITableViewController {
     func loadNotificationView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
         let storyBoard = UIStoryboard(name: "C", bundle: nil)
         let notiTVC = storyBoard.instantiateViewController(withIdentifier: "NotifiTableViewController") as! NotifiTableViewController
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(notiTVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     func loadPhoneView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
