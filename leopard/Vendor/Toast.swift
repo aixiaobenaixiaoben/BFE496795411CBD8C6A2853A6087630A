@@ -260,6 +260,19 @@ public extension UIView {
     }
     
     /**
+     * Creates and displays a new toast activity indicator view at a specified position with message.
+     */
+    // MARK: Add By kevin
+    public func makeToastActivity(_ position: ToastPosition, with message: String) {
+        // sanity
+        guard objc_getAssociatedObject(self, &ToastKeys.activityView) as? UIView == nil else { return }
+        
+        let toast = createToastActivityView(with: message)
+        let point = position.centerPoint(forToast: toast, inSuperview: self)
+        makeToastActivity(toast, point: point)
+    }
+    
+    /**
      Creates and displays a new toast activity indicator view at a specified position.
      
      @warning Only one toast activity indicator view can be presented per superview. Subsequent
@@ -328,6 +341,41 @@ public extension UIView {
         activityView.addSubview(activityIndicatorView)
         activityIndicatorView.color = style.activityIndicatorColor
         activityIndicatorView.startAnimating()
+        
+        return activityView
+    }
+    
+    // MARK: Add By kevin
+    private func createToastActivityView(with message: String) -> UIView {
+        let style = ToastManager.shared.style
+        
+        let activityView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: style.activitySize.width, height: style.activitySize.height))
+        activityView.backgroundColor = style.activityBackgroundColor
+        activityView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin]
+        activityView.layer.cornerRadius = style.cornerRadius
+        
+        if style.displayShadow {
+            activityView.layer.shadowColor = style.shadowColor.cgColor
+            activityView.layer.shadowOpacity = style.shadowOpacity
+            activityView.layer.shadowRadius = style.shadowRadius
+            activityView.layer.shadowOffset = style.shadowOffset
+        }
+        
+        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicatorView.center = CGPoint(x: activityView.bounds.size.width / 2.0, y: activityView.bounds.size.height / 2.0)
+        activityView.addSubview(activityIndicatorView)
+        activityIndicatorView.color = style.activityIndicatorColor
+        activityIndicatorView.startAnimating()
+        
+        if !message.isEmpty {
+            activityIndicatorView.frame.origin.y -= 10
+            let activityMessageLabel = UILabel(frame: CGRect(x: activityView.bounds.origin.x, y: (activityIndicatorView.frame.origin.y + activityIndicatorView.frame.size.height + 10), width: activityView.bounds.size.width, height: 20))
+            activityMessageLabel.textColor = style.activityIndicatorColor
+            activityMessageLabel.font = style.messageFont
+            activityMessageLabel.textAlignment = .center
+            activityMessageLabel.text = message
+            activityView.addSubview(activityMessageLabel)
+        }
         
         return activityView
     }
