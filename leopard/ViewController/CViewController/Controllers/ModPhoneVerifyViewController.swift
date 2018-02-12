@@ -17,7 +17,6 @@ class ModPhoneVerifyViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     
     var syusrinf: Syusrinf!
-    var syvrymbl: Syvrymbl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +54,7 @@ class ModPhoneVerifyViewController: UIViewController {
     
     @IBAction func Submit(_ sender: Any) {
         submitButton.isEnabled = false
-        syvrymbl = Syvrymbl()
+        let syvrymbl = Syvrymbl()
         syvrymbl.svmmobile = syusrinf.suimobile
         syvrymbl.svmvrycod = svmvrycodField.text?.trimmingCharacters(in: .whitespaces)
         

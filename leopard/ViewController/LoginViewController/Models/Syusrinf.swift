@@ -15,5 +15,7 @@ class Syusrinf: HandyJSON {
     var suipaswrd: String?
     var suiverson: String?
     
+    var newpaswrd: String?
+    
     required init() {}
 }

@@ -32,6 +32,7 @@
 		0A4E3E92200B616400D1B685 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E3E91200B616400D1B685 /* Login.storyboard */; };
 		0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9D200B671A00D1B685 /* AViewController.swift */; };
 		0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9F200B67FA00D1B685 /* BViewController.swift */; };
+		0A5B4D9920316153006A0D81 /* ModPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B4D9820316153006A0D81 /* ModPasswordViewController.swift */; };
 		0A61A9212004CD5200302336 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; };
 		0A61A9222004CD5200302336 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A656DEF2024822300E72E6E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A656DEE2024822300E72E6E /* Toast.swift */; };
@@ -113,6 +114,7 @@
 		0A4E3E91200B616400D1B685 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0A4E3E9D200B671A00D1B685 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		0A4E3E9F200B67FA00D1B685 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		0A5B4D9820316153006A0D81 /* ModPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModPasswordViewController.swift; sourceTree = "<group>"; };
 		0A61A91D2004CD4100302336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		0A656DEE2024822300E72E6E /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0A6C98A1202D6D5100314146 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				0AF8CA6B20235D2B00B0A687 /* ModPhoneViewController.swift */,
 				0A158F3D2028C81000853AA0 /* ModPhoneVerifyViewController.swift */,
 				0A6C98A1202D6D5100314146 /* NotifiTableViewController.swift */,
+				0A5B4D9820316153006A0D81 /* ModPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				0A158F50202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift in Sources */,
 				0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */,
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
+				0A5B4D9920316153006A0D81 /* ModPasswordViewController.swift in Sources */,
 				0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */,
 				0ADECD21200849B400FFCA73 /* HomeViewController.swift in Sources */,
 				0AF8CA682022D77100B0A687 /* CTableViewController.swift in Sources */,

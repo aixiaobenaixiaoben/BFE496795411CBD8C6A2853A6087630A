@@ -11,6 +11,17 @@ import Alamofire
 
 class CTableViewController: UITableViewController {
     
+    @IBOutlet weak var suiusrnamLabel: UILabel!
+    @IBOutlet weak var suimobileLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let string = UserDefaults.standard.string(forKey: "Syusrinf"), let syusrinf = Syusrinf.deserialize(from: string) {
+            suiusrnamLabel.text = syusrinf.suiusrnam
+            suimobileLabel.text = syusrinf.suimobile
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -85,6 +96,10 @@ class CTableViewController: UITableViewController {
     }
     
     func loadPasswordView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let modPasswordVC = storyBoard.instantiateViewController(withIdentifier: "ModPasswordViewController") as! ModPasswordViewController
+        let modPasswordNC = UINavigationController(rootViewController: modPasswordVC)
+        self.present(modPasswordNC, animated: true, completion: nil)
     }
     
     func logout(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {

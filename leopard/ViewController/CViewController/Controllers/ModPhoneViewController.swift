@@ -14,8 +14,6 @@ class ModPhoneViewController: UIViewController {
     @IBOutlet weak var suimobileField: UITextField!
     @IBOutlet weak var messageLabel: UILabel!
     
-    var syusrinf: Syusrinf!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         suimobileField.delegate = self
@@ -41,7 +39,7 @@ class ModPhoneViewController: UIViewController {
     
     @IBAction func Next(_ sender: Any) {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
-        syusrinf = Syusrinf()
+        let syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         
         Alamofire.request(SERVER + "user/sendModPhoneVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
@@ -49,7 +47,7 @@ class ModPhoneViewController: UIViewController {
             if Response<String>.success(response) {
                 let storyBoard = UIStoryboard(name: "C", bundle: nil)
                 let modPhoneVerifyVC = storyBoard.instantiateViewController(withIdentifier: "ModPhoneVerifyViewController") as! ModPhoneVerifyViewController
-                modPhoneVerifyVC.syusrinf = self.syusrinf
+                modPhoneVerifyVC.syusrinf = syusrinf
                 
                 let button = UIBarButtonItem(title: NSLocalizedString("BACK", comment: "back button text"), style: .plain, target: nil, action: nil)
                 self.navigationItem.backBarButtonItem = button

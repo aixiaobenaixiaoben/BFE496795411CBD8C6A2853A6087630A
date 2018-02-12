@@ -79,6 +79,98 @@ and can opt out at any time</string>
             </objects>
             <point key="canvasLocation" x="-238" y="179"/>
         </scene>
+        <!--SET PASSWORD-->
+        <scene sceneID="CkJ-Xo-rLE">
+            <objects>
+                <viewController storyboardIdentifier="ModPasswordViewController" id="dyw-C1-2WA" customClass="ModPasswordViewController" customModule="leopard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iUu-bp-ar7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ORIGINAL_PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovA-Ye-x9D">
+                                <rect key="frame" x="16" y="136" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eyr-2b-no8">
+                                <rect key="frame" x="16" y="165" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="checkValid:" destination="dyw-C1-2WA" eventType="editingChanged" id="z2I-3X-tDQ"/>
+                                    <action selector="textFieldDoneEditing:" destination="dyw-C1-2WA" eventType="editingDidEndOnExit" id="9b8-rn-2Ve"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEW_PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru1-yM-bPG">
+                                <rect key="frame" x="16" y="203" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-qz-L9t">
+                                <rect key="frame" x="16" y="232" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="checkValid:" destination="dyw-C1-2WA" eventType="editingChanged" id="ruh-Ba-6in"/>
+                                    <action selector="textFieldDoneEditing:" destination="dyw-C1-2WA" eventType="editingDidEndOnExit" id="Swy-Ci-Asi"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnO-K1-xVn">
+                                <rect key="frame" x="16" y="270" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.3026541096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZt-su-E8v">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="SUBMIT"/>
+                                <connections>
+                                    <action selector="submit:" destination="dyw-C1-2WA" eventType="touchUpInside" id="s1s-1a-MUI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="wyb-iL-ocb"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hq3-mv-Aa6" appends="YES" id="UFv-9n-EM3"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="SET PASSWORD" id="Xga-ic-b7L">
+                        <barButtonItem key="leftBarButtonItem" title="CANCEL" id="nL3-dA-XMK">
+                            <connections>
+                                <action selector="back:" destination="dyw-C1-2WA" id="j8U-i1-vYe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="nnO-K1-xVn" id="gX9-Kn-YF5"/>
+                        <outlet property="newSuipaswrdField" destination="YMc-qz-L9t" id="o68-my-DDX"/>
+                        <outlet property="oldSuipaswrdField" destination="Eyr-2b-no8" id="LJG-Jv-625"/>
+                        <outlet property="submitButton" destination="KZt-su-E8v" id="5XS-PD-5l6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O54-iq-V4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hq3-mv-Aa6">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="dyw-C1-2WA" id="Lx0-vH-d24"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="424.80000000000001" y="178.56071964017991"/>
+        </scene>
         <!--NOTIFICATION-->
         <scene sceneID="CBb-QH-upg">
             <objects>
@@ -130,7 +222,7 @@ and can opt out at any time</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6l-zc-Alo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239.19999999999999" y="851.42428785607206"/>
+            <point key="canvasLocation" x="-892" y="179"/>
         </scene>
         <!--VERIFICATION_CODE-->
         <scene sceneID="Bq8-lq-EpM">
@@ -207,7 +299,7 @@ and can opt out at any time</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="420" y="179"/>
+            <point key="canvasLocation" x="-239" y="839"/>
         </scene>
     </scenes>
 </document>
