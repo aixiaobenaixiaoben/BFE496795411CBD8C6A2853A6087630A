@@ -48,10 +48,6 @@ class ModPhoneVerifyViewController: UIViewController {
         }
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: Any) {
-        svmvrycodField.resignFirstResponder()
-    }
-    
     @IBAction func Submit(_ sender: Any) {
         submitButton.isEnabled = false
         let syvrymbl = Syvrymbl()

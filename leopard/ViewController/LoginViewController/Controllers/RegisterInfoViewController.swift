@@ -38,11 +38,6 @@ class RegisterInfoViewController: UIViewController {
         sender.resignFirstResponder()
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        suiusrnamField.resignFirstResponder()
-        suipaswrdField.resignFirstResponder()
-    }
-    
     @IBAction func loadRegisterEndView(_ sender: UIButton) {
         registerButton.isEnabled = false
         syusrinf.suiusrnam = suiusrnamField.text?.trimmingCharacters(in: .whitespaces)

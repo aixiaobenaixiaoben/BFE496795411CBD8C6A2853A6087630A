@@ -18,7 +18,7 @@ class CTableViewController: UITableViewController {
         super.viewDidLoad()
         if let string = UserDefaults.standard.string(forKey: "Syusrinf"), let syusrinf = Syusrinf.deserialize(from: string) {
             suiusrnamLabel.text = syusrinf.suiusrnam
-            suimobileLabel.text = syusrinf.suimobile
+            suimobileLabel.text = suimobileLabel.text! + syusrinf.suimobile!
         }
     }
     

@@ -41,11 +41,6 @@ class LoginViewController: UIViewController {
         sender.resignFirstResponder()
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        suimobileField.resignFirstResponder()
-        suipaswrdField.resignFirstResponder()
-    }
-    
     @IBAction func login(_ sender: UIButton) {
         loginButton.isEnabled = false
         let syusrinf = Syusrinf()

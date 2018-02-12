@@ -30,10 +30,6 @@ class RegisterApplyViewController: UIViewController {
         }
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        suimobileField.resignFirstResponder()
-    }
-    
     @IBAction func loadRegisterCodeVIew(_ sender: UIButton) {
         sendVerifyButton.isEnabled = false
         let syusrinf = Syusrinf()

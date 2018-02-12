@@ -107,7 +107,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfI-cN-nLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aB1-oY-h3X">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="wzc-FB-4PV" id="XVO-9a-QEW"/>
+                        <action selector="onTapGestureRecognized:" destination="wzc-FB-4PV" id="GlM-6i-eA7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -203,7 +203,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whY-q3-bS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="kQS-RA-MQU">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="o22-pc-du8" id="GbP-ey-1Ws"/>
+                        <action selector="onTapGestureRecognized:" destination="o22-pc-du8" id="iQP-zn-1tu"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -308,7 +308,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsL-hk-vQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ZSK-S6-TYm">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="Kgg-xB-mH2" id="W5y-Qx-d2o"/>
+                        <action selector="onTapGestureRecognized:" destination="Kgg-xB-mH2" id="vLU-mc-qpE"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -425,7 +425,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itw-kn-zwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="02e-qI-SBu">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="qxV-4X-kAH" id="q2a-Mo-VRw"/>
+                        <action selector="onTapGestureRecognized:" destination="qxV-4X-kAH" id="cYy-V9-JYB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -568,7 +568,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XED-xX-G9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="IAy-r6-bbu">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="EIa-uE-K8s" id="dWb-Ny-bBP"/>
+                        <action selector="onTapGestureRecognized:" destination="EIa-uE-K8s" id="73t-wf-JgE"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -673,7 +673,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9UY-Bl-LLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Zbc-1s-xRD">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="UIt-pC-dDC" id="tSo-TB-Fnc"/>
+                        <action selector="onTapGestureRecognized:" destination="UIt-pC-dDC" id="mEg-Gl-A8a"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -761,7 +761,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfB-TD-btE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ZeV-4T-wTn">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="hLf-fr-6JU" id="OiU-25-QVR"/>
+                        <action selector="onTapGestureRecognized:" destination="hLf-fr-6JU" id="MMg-b3-Qeh"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

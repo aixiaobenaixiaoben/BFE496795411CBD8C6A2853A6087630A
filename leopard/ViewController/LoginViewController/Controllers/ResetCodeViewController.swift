@@ -36,10 +36,6 @@ class ResetCodeViewController: UIViewController {
         }
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        svmvrycodField.resignFirstResponder()
-    }
-    
     @IBAction func loadResetInfoView(_ sender: UIButton) {
         verifyButton.isEnabled = false
         let syvrymbl = Syvrymbl()

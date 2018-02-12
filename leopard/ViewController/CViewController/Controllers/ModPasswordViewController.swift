@@ -32,14 +32,6 @@ class ModPasswordViewController: UIViewController {
         }
     }
     
-    @IBAction func textFieldDoneEditing(_ sender: UITextField) {
-        sender.resignFirstResponder()
-    }
-    
-    @IBAction func onTapGestureRecognized(_ sender: Any) {
-        self.view.endEditing(true)
-    }
-    
     @IBAction func submit(_ sender: Any) {
         submitButton.isEnabled = false
         self.navigationController?.view.makeToastActivity(.center)

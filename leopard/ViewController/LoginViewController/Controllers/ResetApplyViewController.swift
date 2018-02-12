@@ -30,10 +30,6 @@ class ResetApplyViewController: UIViewController {
         }
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        suimobileField.resignFirstResponder()
-    }
-    
     @IBAction func loadResetCodeView(_ sender: UIButton) {
         sendVerifyButton.isEnabled = false
         let syusrinf = Syusrinf()

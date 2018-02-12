@@ -73,7 +73,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcX-sI-fuv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="0sK-zO-Zbp">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="LbV-Pt-BRw" id="gKu-Eg-VXc"/>
+                        <action selector="onTapGestureRecognized:" destination="LbV-Pt-BRw" id="hDd-AS-caj"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -102,7 +102,7 @@ and can opt out at any time</string>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="dyw-C1-2WA" eventType="editingChanged" id="z2I-3X-tDQ"/>
-                                    <action selector="textFieldDoneEditing:" destination="dyw-C1-2WA" eventType="editingDidEndOnExit" id="9b8-rn-2Ve"/>
+                                    <action selector="textFieldEditDone:" destination="dyw-C1-2WA" eventType="editingDidEndOnExit" id="T6k-KX-bL0"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEW_PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru1-yM-bPG">
@@ -120,7 +120,7 @@ and can opt out at any time</string>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="dyw-C1-2WA" eventType="editingChanged" id="ruh-Ba-6in"/>
-                                    <action selector="textFieldDoneEditing:" destination="dyw-C1-2WA" eventType="editingDidEndOnExit" id="Swy-Ci-Asi"/>
+                                    <action selector="textFieldEditDone:" destination="dyw-C1-2WA" eventType="editingDidEndOnExit" id="MlH-KN-wT7"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnO-K1-xVn">
@@ -165,7 +165,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O54-iq-V4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="hq3-mv-Aa6">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="dyw-C1-2WA" id="Lx0-vH-d24"/>
+                        <action selector="onTapGestureRecognized:" destination="dyw-C1-2WA" id="uUW-oU-Cfo"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -295,7 +295,7 @@ and can opt out at any time</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cN9-yW-wwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="wE1-MP-aek">
                     <connections>
-                        <action selector="onTapGestureRecognized:" destination="ssS-H9-HNe" id="9qk-bn-6WO"/>
+                        <action selector="onTapGestureRecognized:" destination="ssS-H9-HNe" id="o02-c2-amD"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

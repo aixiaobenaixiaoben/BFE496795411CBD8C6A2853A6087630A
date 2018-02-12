@@ -18,4 +18,12 @@ extension UIViewController: UITextFieldDelegate {
         return newLength <= 32
     }
     
+    @IBAction func textFieldEditDone(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func onTapGestureRecognized(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
 }

@@ -36,10 +36,6 @@ class ResetInfoViewController: UIViewController {
         suipaswrdField.resignFirstResponder()
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        suipaswrdField.resignFirstResponder()
-    }
-    
     @IBAction func loadResetEndView(_ sender: UIButton) {
         resetButton.isEnabled = false
         syusrinf.suipaswrd = suipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()

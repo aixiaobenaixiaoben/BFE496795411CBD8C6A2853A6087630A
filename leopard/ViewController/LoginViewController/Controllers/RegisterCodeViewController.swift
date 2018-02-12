@@ -36,10 +36,6 @@ class RegisterCodeViewController: UIViewController {
         }
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        svmvrycodField.resignFirstResponder()
-    }
-    
     @IBAction func loadRegisterInfoView(_ sender: UIButton) {
         verifyButton.isEnabled = false
         let syvrymbl = Syvrymbl()

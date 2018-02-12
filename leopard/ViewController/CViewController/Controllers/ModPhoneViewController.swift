@@ -29,10 +29,6 @@ class ModPhoneViewController: UIViewController {
         }
     }
     
-    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        suimobileField.resignFirstResponder()
-    }
-    
     @IBAction func Back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
