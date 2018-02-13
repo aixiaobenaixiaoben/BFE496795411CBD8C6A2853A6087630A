@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NotifiTableViewController: UITableViewController {
     
@@ -15,10 +16,28 @@ class NotifiTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notifiSwitch.isOn = UserDefaults.standard.bool(forKey: "notifiSwitch")
+        
+        let center = UNUserNotificationCenter.current()
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus == .denied {
+                DispatchQueue.main.async {
+                    self.notifiSwitch.isEnabled = false
+                }
+            }
+        }
     }
     
     @IBAction func valueChanged(_ sender: Any) {
         UserDefaults.standard.set(notifiSwitch.isOn, forKey: "notifiSwitch")
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath), let identifier = cell.reuseIdentifier {
+            if identifier == "JUMPTOSETTINGSAPP" {
+                UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
+            }
+            cell.isSelected = false
+        }
     }
 
 
