@@ -16,7 +16,7 @@ class CTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let string = UserDefaults.standard.string(forKey: "Syusrinf"), let syusrinf = Syusrinf.deserialize(from: string) {
+        if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
             suiusrnamLabel.text = syusrinf.suiusrnam
             suimobileLabel.text = suimobileLabel.text! + syusrinf.suimobile!
         }
@@ -111,7 +111,7 @@ class CTableViewController: UITableViewController {
         let confirmAction = UIAlertAction(title: NSLocalizedString("CONFIRM", comment: "confirm action"), style: .default, handler: {
             action in
             
-            UserDefaults.standard.set(nil, forKey: "Syusrinf")
+            UserDefaults.standard.set(nil, forKey: "SYUSRINF")
             LoginViewController.isLogin = false
             
             Alamofire.request(SERVER + "user/logout.action", method: .post).responseString {

@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
             
             if let data = Response<Syusrinf>.data(response) {
                 data.suipaswrd = syusrinf.suipaswrd
-                UserDefaults.standard.set(data.toJSONString(), forKey: "Syusrinf")
+                UserDefaults.standard.set(data.toJSONString(), forKey: "SYUSRINF")
                 print(data.toJSONString(prettyPrint: true)!)
                 LoginViewController.isLogin = true
                 self.dismiss(animated: true, completion: nil)
@@ -70,12 +70,12 @@ class LoginViewController: UIViewController {
             response in
             if let data = Response<Syusrinf>.data(response) {
                 data.suipaswrd = syusrinf.suipaswrd
-                UserDefaults.standard.set(data.toJSONString(), forKey: "Syusrinf")
+                UserDefaults.standard.set(data.toJSONString(), forKey: "SYUSRINF")
                 print(data.toJSONString(prettyPrint: true)!)
                 LoginViewController.isLogin = true
             } else  {
                 LoginViewController.isLogin = false
-                UserDefaults.standard.set(nil, forKey: "Syusrinf")
+                UserDefaults.standard.set(nil, forKey: "SYUSRINF")
             }
         }
     }
@@ -96,7 +96,7 @@ class LoginViewController: UIViewController {
         let syusrinf = Syusrinf()
         syusrinf.suimobile = "15925648080"
         syusrinf.suipaswrd = "3E677D133FEC4B263E4365F9C36DAB72"
-        UserDefaults.standard.set(syusrinf.toJSONString(), forKey: "Syusrinf")
+        UserDefaults.standard.set(syusrinf.toJSONString(), forKey: "SYUSRINF")
         LoginViewController.isLogin = true
         self.dismiss(animated: true, completion: nil)
     }

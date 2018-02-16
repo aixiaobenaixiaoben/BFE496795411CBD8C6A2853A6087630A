@@ -36,7 +36,7 @@ class ModPasswordViewController: UIViewController {
         submitButton.isEnabled = false
         self.navigationController?.view.makeToastActivity(.center)
         
-        if let string = UserDefaults.standard.string(forKey: "Syusrinf"), let syusrinf = Syusrinf.deserialize(from: string) {
+        if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
             syusrinf.suipaswrd = oldSuipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()
             syusrinf.newpaswrd = newSuipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()
             
@@ -44,7 +44,7 @@ class ModPasswordViewController: UIViewController {
                 
                 if let newSyusrinf = Response<Syusrinf>.data(response) {
                     newSyusrinf.suipaswrd = syusrinf.newpaswrd
-                    UserDefaults.standard.set(newSyusrinf.toJSONString(), forKey: "Syusrinf")
+                    UserDefaults.standard.set(newSyusrinf.toJSONString(), forKey: "SYUSRINF")
                     
                     let alert = UIAlertController(title: NSLocalizedString("CHANGE_PASSWORD_SUCCESS", comment: "response after change password successfully"),
                                                   message: nil, preferredStyle: .alert)

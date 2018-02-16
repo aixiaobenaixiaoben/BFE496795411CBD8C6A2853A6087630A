@@ -15,7 +15,7 @@ class NotifiTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notifiSwitch.isOn = UserDefaults.standard.bool(forKey: "notifiSwitch")
+        notifiSwitch.isOn = UserDefaults.standard.bool(forKey: "NOTIFISWITCH")
         
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings { (settings) in
@@ -28,7 +28,7 @@ class NotifiTableViewController: UITableViewController {
     }
     
     @IBAction func valueChanged(_ sender: Any) {
-        UserDefaults.standard.set(notifiSwitch.isOn, forKey: "notifiSwitch")
+        UserDefaults.standard.set(notifiSwitch.isOn, forKey: "NOTIFISWITCH")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -54,7 +54,7 @@ class ModPhoneVerifyViewController: UIViewController {
         syvrymbl.svmmobile = syusrinf.suimobile
         syvrymbl.svmvrycod = svmvrycodField.text?.trimmingCharacters(in: .whitespaces)
         
-        if let syusrinfString = UserDefaults.standard.string(forKey: "Syusrinf"), let loginSyusrinf = Syusrinf.deserialize(from: syusrinfString) {
+        if let syusrinfString = UserDefaults.standard.string(forKey: "SYUSRINF"), let loginSyusrinf = Syusrinf.deserialize(from: syusrinfString) {
             syusrinf.suiverson = loginSyusrinf.suiverson
         }
         
@@ -63,9 +63,9 @@ class ModPhoneVerifyViewController: UIViewController {
             
             if let newSyusrinf = Response<Syusrinf>.data(response) {
                 
-                if let syusrinfString = UserDefaults.standard.string(forKey: "Syusrinf"), let loginSyusrinf = Syusrinf.deserialize(from: syusrinfString) {
+                if let syusrinfString = UserDefaults.standard.string(forKey: "SYUSRINF"), let loginSyusrinf = Syusrinf.deserialize(from: syusrinfString) {
                     newSyusrinf.suipaswrd = loginSyusrinf.suipaswrd
-                    UserDefaults.standard.set(newSyusrinf.toJSONString(), forKey: "Syusrinf")
+                    UserDefaults.standard.set(newSyusrinf.toJSONString(), forKey: "SYUSRINF")
                 }
                 
                 let alert = UIAlertController(title: NSLocalizedString("CHANGE_MOBILE_SUCCESS", comment: "response after change mobile successfully"),

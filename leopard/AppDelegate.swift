@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization.
-            UserDefaults.standard.set(granted, forKey: "notifiSwitch")
+            UserDefaults.standard.set(granted, forKey: "NOTIFISWITCH")
         }
         
         return true
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
-        if let syusrinfString = UserDefaults.standard.string(forKey: "Syusrinf"), let syusrinf = Syusrinf.deserialize(from: syusrinfString) {
+        if let syusrinfString = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: syusrinfString) {
             print("--log in when applicationWillEnterForeground")
             LoginViewController.loginAutomatic(syusrinf)
         }

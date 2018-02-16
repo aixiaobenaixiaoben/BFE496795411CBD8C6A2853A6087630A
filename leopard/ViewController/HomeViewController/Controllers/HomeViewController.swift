@@ -15,12 +15,12 @@ class HomeViewController: UITabBarController {
         super.viewDidAppear(true)
         
         if !LoginViewController.isLogin {
-            if let string = UserDefaults.standard.string(forKey: "Syusrinf"), let syusrinf = Syusrinf.deserialize(from: string) {
+            if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
                 Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
                     response in
                     if let data = Response<Syusrinf>.data(response) {
                         data.suipaswrd = syusrinf.suipaswrd
-                        UserDefaults.standard.set(data.toJSONString(), forKey: "Syusrinf")
+                        UserDefaults.standard.set(data.toJSONString(), forKey: "SYUSRINF")
                         print("--log in after HomeViewController viewdidappear")
                         print(data.toJSONString(prettyPrint: true)!)
                         LoginViewController.isLogin = true
@@ -29,7 +29,7 @@ class HomeViewController: UITabBarController {
                             aVC.reloadData()
                         }
                     } else  {
-                        UserDefaults.standard.set(nil, forKey: "Syusrinf")
+                        UserDefaults.standard.set(nil, forKey: "SYUSRINF")
                         self.loadLoginView()
                     }
                 }
