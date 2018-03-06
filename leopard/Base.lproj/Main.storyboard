@@ -94,7 +94,7 @@
                         <sections>
                             <tableViewSection id="6nF-Zc-A8O">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PROFILE" textLabel="KE7-Rb-u9c" imageView="L6h-wn-Znh" style="IBUITableViewCellStyleDefault" id="v3T-t7-Gfe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PROFILE" textLabel="KE7-Rb-u9c" imageView="L6h-wn-Znh" rowHeight="44" style="IBUITableViewCellStyleDefault" id="v3T-t7-Gfe">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v3T-t7-Gfe" id="7aX-1i-0hF">
@@ -108,7 +108,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="apple" id="L6h-wn-Znh">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="apple" id="L6h-wn-Znh">
                                                     <rect key="frame" x="16" y="0.0" width="49" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -140,15 +140,22 @@
                             </tableViewSection>
                             <tableViewSection id="Yw9-Ol-zFh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PHONE" textLabel="iOZ-Wq-bUD" style="IBUITableViewCellStyleDefault" id="QZC-bY-8pB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PHONE" textLabel="iOZ-Wq-bUD" detailTextLabel="V0Y-mJ-ims" style="IBUITableViewCellStyleValue1" id="QZC-bY-8pB">
                                         <rect key="frame" x="0.0" y="195" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZC-bY-8pB" id="mHi-0s-RAd">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="PHONE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iOZ-Wq-bUD">
-                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="PHONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iOZ-Wq-bUD">
+                                                    <rect key="frame" x="16" y="12" width="57.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="SUIMOBILE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V0Y-mJ-ims">
+                                                    <rect key="frame" x="252" y="12" width="88" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -227,8 +234,9 @@
                     <navigationItem key="navigationItem" title="ME" id="Bwh-CV-HLY"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="suimobileLabel" destination="iOZ-Wq-bUD" id="LXS-kq-gQB"/>
-                        <outlet property="suiusrnamLabel" destination="KE7-Rb-u9c" id="eAJ-cc-Ysh"/>
+                        <outlet property="portraitImageView" destination="L6h-wn-Znh" id="gaD-1w-ofQ"/>
+                        <outlet property="suimobileCell" destination="QZC-bY-8pB" id="VS0-gv-I6n"/>
+                        <outlet property="suiusrnamCell" destination="v3T-t7-Gfe" id="gPa-4t-xog"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzK-LP-w8b" userLabel="First Responder" sceneMemberID="firstResponder"/>

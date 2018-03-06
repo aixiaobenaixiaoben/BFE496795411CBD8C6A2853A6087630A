@@ -11,19 +11,40 @@ import Alamofire
 
 class CTableViewController: UITableViewController {
     
-    @IBOutlet weak var suiusrnamLabel: UILabel!
-    @IBOutlet weak var suimobileLabel: UILabel!
+    @IBOutlet weak var suiusrnamCell: UITableViewCell!
+    @IBOutlet weak var suimobileCell: UITableViewCell!
+    @IBOutlet weak var portraitImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
-            suiusrnamLabel.text = syusrinf.suiusrnam
-            suimobileLabel.text = suimobileLabel.text! + syusrinf.suimobile!
+            suiusrnamCell.textLabel?.text = syusrinf.suiusrnam
+            suimobileCell.detailTextLabel?.text = syusrinf.suimobile!
+            
+            Alamofire.request(SERVER + "user/profile.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
+                if let syprofil = Response<Syprofil>.data(response) {
+                    UserDefaults.standard.set(syprofil.toJSONString(), forKey: "SYPROFIL")
+                    print(syprofil.toJSONString(prettyPrint: true)!)
+                    if let remote = syprofil.spfphotog {
+                        //TODO: - 加载图片不使用缓存
+                        Download.image(of: remote, for: self.portraitImageView, in: self)
+                    }
+                }
+            }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
+            suiusrnamCell.textLabel?.text = syusrinf.suiusrnam
+            suimobileCell.detailTextLabel?.text = syusrinf.suimobile!
+        }
+        if let string = UserDefaults.standard.string(forKey: "SYPROFIL"), let syprofil = Syprofil.deserialize(from: string), let remote = syprofil.spfphotog {
+            Download.image(of: remote, for: portraitImageView, in: self)
+        }
         
         self.tableView.reloadData()
     }
@@ -78,6 +99,11 @@ class CTableViewController: UITableViewController {
     }
     
     func loadProfileView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let pTVC = storyBoard.instantiateViewController(withIdentifier: "ProfileTableViewController") as! ProfileTableViewController
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(pTVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     func loadNotificationView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
