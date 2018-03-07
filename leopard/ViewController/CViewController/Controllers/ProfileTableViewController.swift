@@ -23,8 +23,8 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     var flag = ""
     var photoImage: UIImage?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
             nameCell.detailTextLabel?.text = syusrinf.suiusrnam
@@ -40,15 +40,26 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            if cell == genderCell {
-//                photoLib()
-            } else if cell == regionCell {
-//                videoLib()
+            if cell == portraitCell {
+                
             } else if cell == nameCell {
-//                downloadImage()
+                loadNameView()
+            } else if cell == genderCell {
+                
+            } else if cell == regionCell {
+                
+            } else if cell == whatsupCell {
+                
             }
             cell.isSelected = false
         }
+    }
+    
+    func loadNameView() {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let nameTVC = storyBoard.instantiateViewController(withIdentifier: "NameTableViewController") as! NameTableViewController
+        let nameNC = UINavigationController(rootViewController: nameTVC)
+        self.present(nameNC, animated: true, completion: nil)
     }
     
     //FIXME: - choose image
@@ -76,40 +87,6 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             self.present(picker, animated: true, completion: nil)
         } else {
             self.view.makeToast("no permission to read photoLibrary")
-        }
-    }
-    
-    //FIXME: - download image
-    func downloadImage() {
-        self.navigationController?.view.makeToastActivity(.center, with: "Loading...")
-        let remote = "201802281921170000000130.JPG"
-        let imagePath = NSHomeDirectory() + "/Documents/" + remote
-        
-        if FileManager.default.fileExists(atPath: imagePath) {
-            portraitImageView.image = UIImage(contentsOfFile: imagePath)
-            self.navigationController?.view.hideToastActivity()
-        } else {
-            let errorPath = NSHomeDirectory() + "/Documents/f.txt"
-            if FileManager.default.fileExists(atPath: errorPath) {
-                try! FileManager.default.removeItem(atPath: errorPath)
-            }
-            
-            let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
-            let para: Parameters = ["remote": remote];
-            Alamofire.download(SERVER + "attachment/download.action", method: .post, parameters: para, to: destination).responseData { response in
-                switch response.result {
-                case .success:
-                    self.navigationController?.view.hideToastActivity()
-                    if FileManager.default.fileExists(atPath: errorPath), let message = Download.error(at: errorPath) {
-                        self.view.makeToast(message)
-                    } else {
-                        self.portraitImageView.image = UIImage(contentsOfFile: imagePath)
-                    }
-                case .failure(let error):
-                    self.navigationController?.view.hideToastActivity()
-                    self.view.makeToast(error.localizedDescription)
-                }
-            }
         }
     }
     

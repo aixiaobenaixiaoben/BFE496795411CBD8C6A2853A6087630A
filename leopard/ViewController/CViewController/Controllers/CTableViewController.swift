@@ -19,8 +19,6 @@ class CTableViewController: UITableViewController {
         super.viewDidLoad()
         
         if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
-            suiusrnamCell.textLabel?.text = syusrinf.suiusrnam
-            suimobileCell.detailTextLabel?.text = syusrinf.suimobile!
             
             Alamofire.request(SERVER + "user/profile.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
                 if let syprofil = Response<Syprofil>.data(response) {
