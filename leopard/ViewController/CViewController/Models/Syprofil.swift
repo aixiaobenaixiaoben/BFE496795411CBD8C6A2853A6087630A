@@ -16,6 +16,9 @@ class Syprofil: HandyJSON {
     var spfphotog: String?
     var spfwhatup: String?
     var spfverson: String?
+    
+    var spfgenderText: String?
+    
 
     required init() {}
     

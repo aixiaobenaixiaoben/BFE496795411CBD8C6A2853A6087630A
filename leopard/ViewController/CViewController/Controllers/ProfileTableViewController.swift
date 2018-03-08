@@ -20,6 +20,8 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     @IBOutlet weak var whatsupCell: UITableViewCell!
     @IBOutlet weak var portraitImageView: UIImageView!
     
+    var syusrinf: Syusrinf!
+    var syprofil: Syprofil!
     var flag = ""
     var photoImage: UIImage?
     
@@ -27,10 +29,12 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
         super.viewWillAppear(animated)
         
         if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
+            self.syusrinf = syusrinf
             nameCell.detailTextLabel?.text = syusrinf.suiusrnam
         }
         if let string = UserDefaults.standard.string(forKey: "SYPROFIL"), let syprofil = Syprofil.deserialize(from: string) {
-            genderCell.detailTextLabel?.text = syprofil.spfgender
+            self.syprofil = syprofil
+            genderCell.detailTextLabel?.text = syprofil.spfgenderText
             regionCell.detailTextLabel?.text = syprofil.spfregion
             if let remote = syprofil.spfphotog {
                 Download.image(of: remote, for: portraitImageView, in: self)
@@ -45,7 +49,7 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             } else if cell == nameCell {
                 loadNameView()
             } else if cell == genderCell {
-                
+                loadGenderView()
             } else if cell == regionCell {
                 
             } else if cell == whatsupCell {
@@ -58,8 +62,17 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     func loadNameView() {
         let storyBoard = UIStoryboard(name: "C", bundle: nil)
         let nameTVC = storyBoard.instantiateViewController(withIdentifier: "NameTableViewController") as! NameTableViewController
+        nameTVC.syusrinf = syusrinf
         let nameNC = UINavigationController(rootViewController: nameTVC)
         self.present(nameNC, animated: true, completion: nil)
+    }
+    
+    func loadGenderView() {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let genderTVC = storyBoard.instantiateViewController(withIdentifier: "GenderTableViewController") as! GenderTableViewController
+        genderTVC.syprofil = syprofil
+        let genderNC = UINavigationController(rootViewController: genderTVC)
+        self.present(genderNC, animated: true, completion: nil)
     }
     
     //FIXME: - choose image

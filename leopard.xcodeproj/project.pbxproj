@@ -41,6 +41,7 @@
 		0AA76DB8204BEAE800DA64B4 /* Syprofil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DB7204BEAE800DA64B4 /* Syprofil.swift */; };
 		0AA76DBA204BECB300DA64B4 /* Sydicinf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */; };
 		0AA76DBC2050075500DA64B4 /* NameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */; };
+		0AA76DBE2050D0A000DA64B4 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DBD2050D0A000DA64B4 /* GenderTableViewController.swift */; };
 		0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */; };
 		0ADA7EF32046BFAF00967784 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA7EF22046BFAF00967784 /* Download.swift */; };
 		0ADAE3602005B698006CB2DE /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADAE35E2005B663006CB2DE /* HandyJSON.framework */; };
@@ -127,6 +128,7 @@
 		0AA76DB7204BEAE800DA64B4 /* Syprofil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syprofil.swift; sourceTree = "<group>"; };
 		0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sydicinf.swift; sourceTree = "<group>"; };
 		0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewController.swift; sourceTree = "<group>"; };
+		0AA76DBD2050D0A000DA64B4 /* GenderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
 		0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPrivacyViewController.swift; sourceTree = "<group>"; };
 		0ADA7EF22046BFAF00967784 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		0ADAE35E2005B663006CB2DE /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = SOURCE_ROOT; };
@@ -370,6 +372,7 @@
 				0A5B4D9820316153006A0D81 /* ModPasswordViewController.swift */,
 				0A2712D6203854A80028BD37 /* ProfileTableViewController.swift */,
 				0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */,
+				0AA76DBD2050D0A000DA64B4 /* GenderTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				0A09D577200CE700000C487E /* RegisterApplyViewController.swift in Sources */,
 				0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */,
 				0A656DEF2024822300E72E6E /* Toast.swift in Sources */,
+				0AA76DBE2050D0A000DA64B4 /* GenderTableViewController.swift in Sources */,
 				0A09D57F200CE788000C487E /* ResetApplyViewController.swift in Sources */,
 				0ADA7EF32046BFAF00967784 /* Download.swift in Sources */,
 				0A3C24F820048E7B00CD6FD0 /* AppDelegate.swift in Sources */,

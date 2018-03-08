@@ -23,9 +23,8 @@ class NameTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let user = Syusrinf.deserialize(from: string) {
-            syusrinf = user
-            suiusrnamField.text = user.suiusrnam
+        if syusrinf != nil {
+            suiusrnamField.text = syusrinf.suiusrnam
         }
     }
     
@@ -42,23 +41,23 @@ class NameTableViewController: UITableViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        guard let suiusrnam = suiusrnamField.text, suiusrnam.verifyUsername() else {
+        guard let suiusrnam = suiusrnamField.text, suiusrnam.verifyUsername(), syusrinf != nil else {
             return
         }
-        if  suiusrnam == syusrinf.suiusrnam {
+        if suiusrnam == syusrinf.suiusrnam {
             self.dismiss(animated: true, completion: nil)
             return
         }
         self.navigationItem.rightBarButtonItem?.isEnabled = false
-        syusrinf.suipaswrd = nil
-        syusrinf.suiusrnam = suiusrnam.trimmingCharacters(in: .whitespaces)
+        let updateSyusrinf = Syusrinf()
+        updateSyusrinf.suiseqcod = syusrinf.suiseqcod
+        updateSyusrinf.suiverson = syusrinf.suiverson
+        updateSyusrinf.suiusrnam = suiusrnam.trimmingCharacters(in: .whitespaces)
         
-        Alamofire.request(SERVER + "user/updateUserInfo.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
+        Alamofire.request(SERVER + "user/updateUserInfo.action", method: .post, parameters: updateSyusrinf.toJSON()).responseString { response in
             if let newSyusrinf = Response<Syusrinf>.data(response) {
-                if let syusrinfString = UserDefaults.standard.string(forKey: "SYUSRINF"), let loginSyusrinf = Syusrinf.deserialize(from: syusrinfString) {
-                    newSyusrinf.suipaswrd = loginSyusrinf.suipaswrd
-                    UserDefaults.standard.set(newSyusrinf.toJSONString(), forKey: "SYUSRINF")
-                }
+                newSyusrinf.suipaswrd = self.syusrinf.suipaswrd
+                UserDefaults.standard.set(newSyusrinf.toJSONString(), forKey: "SYUSRINF")
                 self.dismiss(animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {
