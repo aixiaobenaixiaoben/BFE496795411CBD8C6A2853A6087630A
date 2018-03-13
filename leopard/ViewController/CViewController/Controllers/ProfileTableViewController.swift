@@ -11,7 +11,7 @@ import MobileCoreServices
 import AVFoundation
 import Alamofire
 
-class ProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, XMLParserDelegate {
 
     @IBOutlet weak var portraitCell: UITableViewCell!
     @IBOutlet weak var nameCell: UITableViewCell!
@@ -20,10 +20,23 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     @IBOutlet weak var whatsupCell: UITableViewCell!
     @IBOutlet weak var portraitImageView: UIImageView!
     
+    var countryRegions: [CountryRegion] = []
     var syusrinf: Syusrinf!
     var syprofil: Syprofil!
     var flag = ""
     var photoImage: UIImage?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //TODO: - 根据用户选择的app语言确定加载地理文件
+        let locFilePath = "zh-LocList"
+        if let path = Bundle.main.url(forResource: locFilePath, withExtension: "xml") {
+            if let parser = XMLParser(contentsOf: path) {
+                parser.delegate = self
+                parser.parse()
+            }
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +48,9 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
         if let string = UserDefaults.standard.string(forKey: "SYPROFIL"), let syprofil = Syprofil.deserialize(from: string) {
             self.syprofil = syprofil
             genderCell.detailTextLabel?.text = syprofil.spfgenderText
-            regionCell.detailTextLabel?.text = syprofil.spfregion
+            
+            parserRegion(syprofil.spfregion)
+            
             if let remote = syprofil.spfphotog {
                 Download.image(of: remote, for: portraitImageView, in: self)
             }
@@ -51,7 +66,7 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             } else if cell == genderCell {
                 loadGenderView()
             } else if cell == regionCell {
-                
+                loadRegionView()
             } else if cell == whatsupCell {
                 
             }
@@ -74,6 +89,90 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
         let genderNC = UINavigationController(rootViewController: genderTVC)
         self.present(genderNC, animated: true, completion: nil)
     }
+    
+    func loadRegionView() {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let regionTVC = storyBoard.instantiateViewController(withIdentifier: "RegionTableViewController") as! RegionTableViewController
+        regionTVC.countryRegions = countryRegions
+        regionTVC.regionString = syprofil.spfregion
+        let regionNC = UINavigationController(rootViewController: regionTVC)
+        self.present(regionNC, animated: true, completion: nil)
+    }
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        if elementName == "CountryRegion" {
+            let countryRegion = CountryRegion()
+            countryRegion.countryRegionCode = attributeDict["Code"]
+            countryRegion.countryRegionName = attributeDict["Name"]
+            countryRegions.append(countryRegion)
+        } else if elementName == "State" {
+            if let countryRegion = countryRegions.last {
+                let state = State()
+                state.stateCode = attributeDict["Code"]
+                state.stateName = attributeDict["Name"]
+                countryRegion.states.append(state)
+            }
+        } else if elementName == "City" {
+            if let countryRegion = countryRegions.last, let state = countryRegion.states.last {
+                let city = City()
+                city.cityCode = attributeDict["Code"]
+                city.cityName = attributeDict["Name"]
+                state.cities.append(city)
+            }
+        }
+    }
+    
+    func parserRegion(_ spfregion: String?) {
+        let regionText = NSLocalizedString("NOTSET", comment: "Tip when region info is empty")
+        guard let regionString = spfregion else {
+            regionCell.detailTextLabel?.text = regionText
+            return
+        }
+        var regionSelected: [String] = regionString.components(separatedBy: "-")
+        
+        for countryRegion in countryRegions {
+            if regionSelected.count > 0, regionSelected[0] == countryRegion.countryRegionCode {//国家名匹配
+                
+                if countryRegion.states.count == 0, regionSelected.count == 1 {
+                    regionCell.detailTextLabel?.text = countryRegion.countryRegionName
+                    return
+                }
+                
+                if countryRegion.states.count == 1, regionSelected.count == 2 {
+                    for city in countryRegion.states[0].cities {
+                        if regionSelected[1] == city.cityCode, let cityName = city.cityName, let countryRegionName = countryRegion.countryRegionName {
+                            regionCell.detailTextLabel?.text = cityName + "," + countryRegionName
+                            return
+                        }
+                    }
+                }
+                
+                if countryRegion.states.count > 1 {
+                    for state in countryRegion.states {
+                        if regionSelected.count > 1, regionSelected[1] == state.stateCode {//州名匹配
+                            
+                            if state.cities.count == 0, regionSelected.count == 2,
+                                let stateName = state.stateName, let countryRegionName = countryRegion.countryRegionName {
+                                regionCell.detailTextLabel?.text = stateName + "," + countryRegionName
+                                return
+                            }
+                            
+                            if state.cities.count > 0, regionSelected.count > 2 {
+                                for city in state.cities {
+                                    if regionSelected[2] == city.cityCode, let cityName = city.cityName, let stateName = state.stateName, let countryRegionName = countryRegion.countryRegionName {//城市名匹配
+                                        regionCell.detailTextLabel?.text = cityName + "," + stateName + "," + countryRegionName
+                                        return
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        regionCell.detailTextLabel?.text = regionText
+    }
+    
     
     //FIXME: - choose image
     func photoLib() {

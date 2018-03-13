@@ -42,6 +42,14 @@
 		0AA76DBA204BECB300DA64B4 /* Sydicinf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */; };
 		0AA76DBC2050075500DA64B4 /* NameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */; };
 		0AA76DBE2050D0A000DA64B4 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DBD2050D0A000DA64B4 /* GenderTableViewController.swift */; };
+		0AA76DC22053CCEF00DA64B4 /* RegionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DC12053CCEF00DA64B4 /* RegionTableViewController.swift */; };
+		0AA76DC42053D13800DA64B4 /* CountryRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DC32053D13800DA64B4 /* CountryRegion.swift */; };
+		0AA76DC62054C17E00DA64B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DC52054C17E00DA64B4 /* City.swift */; };
+		0AA76DC82054C21500DA64B4 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DC72054C21500DA64B4 /* State.swift */; };
+		0AA76DCA2054E91D00DA64B4 /* RegionStateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DC92054E91D00DA64B4 /* RegionStateTableViewController.swift */; };
+		0AA76DCC2054E93F00DA64B4 /* RegionCityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DCB2054E93F00DA64B4 /* RegionCityTableViewController.swift */; };
+		0AA76DCF20568A8200DA64B4 /* zh-LocList.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76DCD20568A8200DA64B4 /* zh-LocList.xml */; };
+		0AA76DD020568A8200DA64B4 /* en-LocList.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76DCE20568A8200DA64B4 /* en-LocList.xml */; };
 		0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */; };
 		0ADA7EF32046BFAF00967784 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA7EF22046BFAF00967784 /* Download.swift */; };
 		0ADAE3602005B698006CB2DE /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADAE35E2005B663006CB2DE /* HandyJSON.framework */; };
@@ -129,6 +137,14 @@
 		0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sydicinf.swift; sourceTree = "<group>"; };
 		0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewController.swift; sourceTree = "<group>"; };
 		0AA76DBD2050D0A000DA64B4 /* GenderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
+		0AA76DC12053CCEF00DA64B4 /* RegionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewController.swift; sourceTree = "<group>"; };
+		0AA76DC32053D13800DA64B4 /* CountryRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRegion.swift; sourceTree = "<group>"; };
+		0AA76DC52054C17E00DA64B4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		0AA76DC72054C21500DA64B4 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		0AA76DC92054E91D00DA64B4 /* RegionStateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateTableViewController.swift; sourceTree = "<group>"; };
+		0AA76DCB2054E93F00DA64B4 /* RegionCityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCityTableViewController.swift; sourceTree = "<group>"; };
+		0AA76DCD20568A8200DA64B4 /* zh-LocList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "zh-LocList.xml"; sourceTree = "<group>"; };
+		0AA76DCE20568A8200DA64B4 /* en-LocList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "en-LocList.xml"; sourceTree = "<group>"; };
 		0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPrivacyViewController.swift; sourceTree = "<group>"; };
 		0ADA7EF22046BFAF00967784 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		0ADAE35E2005B663006CB2DE /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = SOURCE_ROOT; };
@@ -200,6 +216,8 @@
 				0A3C24FB20048E7B00CD6FD0 /* Main.storyboard */,
 				0A3C250320048E7B00CD6FD0 /* LaunchScreen.storyboard */,
 				0A3C24FE20048E7B00CD6FD0 /* leopard.xcdatamodeld */,
+				0AA76DCD20568A8200DA64B4 /* zh-LocList.xml */,
+				0AA76DCE20568A8200DA64B4 /* en-LocList.xml */,
 				0A3C250620048E7B00CD6FD0 /* Info.plist */,
 			);
 			path = leopard;
@@ -358,6 +376,9 @@
 			children = (
 				0AA76DB7204BEAE800DA64B4 /* Syprofil.swift */,
 				0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */,
+				0AA76DC32053D13800DA64B4 /* CountryRegion.swift */,
+				0AA76DC52054C17E00DA64B4 /* City.swift */,
+				0AA76DC72054C21500DA64B4 /* State.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +394,9 @@
 				0A2712D6203854A80028BD37 /* ProfileTableViewController.swift */,
 				0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */,
 				0AA76DBD2050D0A000DA64B4 /* GenderTableViewController.swift */,
+				0AA76DC12053CCEF00DA64B4 /* RegionTableViewController.swift */,
+				0AA76DC92054E91D00DA64B4 /* RegionStateTableViewController.swift */,
+				0AA76DCB2054E93F00DA64B4 /* RegionCityTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -553,7 +577,9 @@
 				0AF8CA6A20235CC000B0A687 /* C.storyboard in Resources */,
 				0A4E3E92200B616400D1B685 /* Login.storyboard in Resources */,
 				0A3C250520048E7B00CD6FD0 /* LaunchScreen.storyboard in Resources */,
+				0AA76DD020568A8200DA64B4 /* en-LocList.xml in Resources */,
 				0A3C250220048E7B00CD6FD0 /* Assets.xcassets in Resources */,
+				0AA76DCF20568A8200DA64B4 /* zh-LocList.xml in Resources */,
 				0A3C24FD20048E7B00CD6FD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,9 +614,12 @@
 				0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
 				0A2712D7203854A80028BD37 /* ProfileTableViewController.swift in Sources */,
+				0AA76DC22053CCEF00DA64B4 /* RegionTableViewController.swift in Sources */,
 				0A158F3E2028C81000853AA0 /* ModPhoneVerifyViewController.swift in Sources */,
+				0AA76DCA2054E91D00DA64B4 /* RegionStateTableViewController.swift in Sources */,
 				0AF8CA6C20235D2B00B0A687 /* ModPhoneViewController.swift in Sources */,
 				0ADAE3672005B764006CB2DE /* Response.swift in Sources */,
+				0AA76DC42053D13800DA64B4 /* CountryRegion.swift in Sources */,
 				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
 				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,
 				0A20200E200E4368009941EF /* ExtensionString.swift in Sources */,
@@ -601,6 +630,7 @@
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
 				0A5B4D9920316153006A0D81 /* ModPasswordViewController.swift in Sources */,
 				0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */,
+				0AA76DCC2054E93F00DA64B4 /* RegionCityTableViewController.swift in Sources */,
 				0ADECD21200849B400FFCA73 /* HomeViewController.swift in Sources */,
 				0AF8CA682022D77100B0A687 /* CTableViewController.swift in Sources */,
 				0AA76DBA204BECB300DA64B4 /* Sydicinf.swift in Sources */,
@@ -612,7 +642,9 @@
 				0A656DEF2024822300E72E6E /* Toast.swift in Sources */,
 				0AA76DBE2050D0A000DA64B4 /* GenderTableViewController.swift in Sources */,
 				0A09D57F200CE788000C487E /* ResetApplyViewController.swift in Sources */,
+				0AA76DC82054C21500DA64B4 /* State.swift in Sources */,
 				0ADA7EF32046BFAF00967784 /* Download.swift in Sources */,
+				0AA76DC62054C17E00DA64B4 /* City.swift in Sources */,
 				0A3C24F820048E7B00CD6FD0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
