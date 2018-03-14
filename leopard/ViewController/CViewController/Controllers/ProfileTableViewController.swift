@@ -128,6 +128,10 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             regionCell.detailTextLabel?.text = regionText
             return
         }
+        if regionString.hasPrefix("#") {
+            regionCell.detailTextLabel?.text = String(regionString.dropFirst())
+            return
+        }
         var regionSelected: [String] = regionString.components(separatedBy: "-")
         
         for countryRegion in countryRegions {
