@@ -46,6 +46,7 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             nameCell.detailTextLabel?.text = syusrinf.suiusrnam
         }
         if let string = UserDefaults.standard.string(forKey: "SYPROFIL"), let syprofil = Syprofil.deserialize(from: string) {
+            print(syprofil.toJSONString(prettyPrint: true)!)
             self.syprofil = syprofil
             genderCell.detailTextLabel?.text = syprofil.spfgenderText
             
@@ -55,6 +56,7 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
                 Download.image(of: remote, for: portraitImageView, in: self)
             }
         }
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
