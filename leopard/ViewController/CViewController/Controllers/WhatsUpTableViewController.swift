@@ -25,7 +25,7 @@ class WhatsUpTableViewController: UITableViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         if syprofil != nil {
             whatsUpTextView.text = syprofil.spfwhatup
-            countLabel.text = String((60 - whatsUpTextView.text.pregReplace(pattern: "[\u{4E00}-\u{9FA5}]", with: "00").count) / 2)
+            countLabel.text = String((60 - whatsUpTextView.text.pregReplace(pattern: String.ZH_CN_PATTERN, with: "00").count) / 2)
         }
     }
 
@@ -36,7 +36,7 @@ class WhatsUpTableViewController: UITableViewController, UITextViewDelegate {
             return true
         }
         guard let string = textView.text else { return true }
-        let alphaText = string.pregReplace(pattern: "[\u{4E00}-\u{9FA5}]", with: "00")
+        let alphaText = string.pregReplace(pattern: String.ZH_CN_PATTERN, with: "00")
         let newLength = alphaText.count + text.count - range.length
         
         countLabel.text = String((60 - newLength) / 2)

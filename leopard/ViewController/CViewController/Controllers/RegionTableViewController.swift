@@ -62,7 +62,7 @@ class RegionTableViewController: UITableViewController, CLLocationManagerDelegat
             
             //将城市-州-国家拼接，前面加#，存储数据库，要确保不超过字段长度
             func canAppend(_ origin: String, _ string: String) -> Bool {
-                return origin.pregReplace(pattern: "[\u{4E00}-\u{9FA5}]", with: "00").count + string.pregReplace(pattern: "[\u{4E00}-\u{9FA5}]", with: "00").count <= 31
+                return origin.pregReplace(pattern: String.ZH_CN_PATTERN, with: "00").count + string.pregReplace(pattern: String.ZH_CN_PATTERN, with: "00").count <= 31
             }
             
             if let places = placemarks, places.count > 0 {

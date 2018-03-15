@@ -13,7 +13,7 @@ extension UIViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
 //        let newLength = text.count + string.count - range.length
-        let alphaText = text.pregReplace(pattern: "[\u{4E00}-\u{9FA5}]", with: "00")
+        let alphaText = text.pregReplace(pattern: String.ZH_CN_PATTERN, with: "00")
         let newLength = alphaText.count + string.count - range.length
         return newLength <= 32
     }

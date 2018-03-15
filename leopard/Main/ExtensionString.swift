@@ -10,6 +10,8 @@ import HandyJSON
 
 extension String: HandyJSON {
     
+    static let ZH_CN_PATTERN: String = "[\u{4E00}-\u{9FA5}]"
+    
     func md5() -> String {
         let str = self.cString(using: String.Encoding.utf8)
         let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
