@@ -171,7 +171,7 @@ and can opt out at any time</string>
             </objects>
             <point key="canvasLocation" x="1814" y="179"/>
         </scene>
-        <!--Profile Table View Controller-->
+        <!--PROFILE-->
         <scene sceneID="jBc-0Y-t6U">
             <objects>
                 <tableViewController storyboardIdentifier="ProfileTableViewController" id="3AE-tC-8LE" customClass="ProfileTableViewController" customModule="leopard" customModuleProvider="target" sceneMemberID="viewController">
@@ -300,6 +300,8 @@ and can opt out at any time</string>
                             <outlet property="delegate" destination="3AE-tC-8LE" id="Rw9-2Z-XuB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="PROFILE" id="Bxe-4E-lnY"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="genderCell" destination="nLH-wh-S8e" id="9oz-8n-sYF"/>
                         <outlet property="nameCell" destination="VZt-fp-OlB" id="WyC-Vd-3iw"/>

@@ -15,33 +15,25 @@ class CTableViewController: UITableViewController {
     @IBOutlet weak var suimobileCell: UITableViewCell!
     @IBOutlet weak var portraitImageView: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
-            
-            Alamofire.request(SERVER + "user/profile.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
-                if let syprofil = Response<Syprofil>.data(response) {
-                    UserDefaults.standard.set(syprofil.toJSONString(), forKey: "SYPROFIL")
-                    print(syprofil.toJSONString(prettyPrint: true)!)
-                    if let remote = syprofil.spfphotog {
-                        //TODO: - 加载图片不使用缓存
-                        Download.image(of: remote, for: self.portraitImageView, in: self)
-                    }
-                }
-            }
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
             suiusrnamCell.textLabel?.text = syusrinf.suiusrnam
             suimobileCell.detailTextLabel?.text = syusrinf.suimobile!
-        }
-        if let string = UserDefaults.standard.string(forKey: "SYPROFIL"), let syprofil = Syprofil.deserialize(from: string), let remote = syprofil.spfphotog {
-            Download.image(of: remote, for: portraitImageView, in: self)
+            
+            Alamofire.request(SERVER + "user/profile.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
+                if let syprofil = Response<Syprofil>.data(response) {
+                    UserDefaults.standard.set(syprofil.toJSONString(), forKey: "SYPROFIL")
+                    print(syprofil.toJSONString(prettyPrint: true)!)
+                    
+                    if let remote = syprofil.spfphotog, remote.count > 0 {
+                        Download.image(of: remote, for: self.portraitImageView, in: self)
+                    } else {
+                        self.portraitImageView.image = UIImage(named: "apple")
+                    }
+                }
+            }
         }
         
         self.tableView.reloadData()
@@ -136,6 +128,7 @@ class CTableViewController: UITableViewController {
             action in
             
             UserDefaults.standard.set(nil, forKey: "SYUSRINF")
+            UserDefaults.standard.set(nil, forKey: "SYPROFIL")
             LoginViewController.isLogin = false
             
             Alamofire.request(SERVER + "user/logout.action", method: .post).responseString {
