@@ -50,6 +50,7 @@
 		0AA76DCC2054E93F00DA64B4 /* RegionCityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DCB2054E93F00DA64B4 /* RegionCityTableViewController.swift */; };
 		0AA76DCF20568A8200DA64B4 /* zh-LocList.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76DCD20568A8200DA64B4 /* zh-LocList.xml */; };
 		0AA76DD020568A8200DA64B4 /* en-LocList.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76DCE20568A8200DA64B4 /* en-LocList.xml */; };
+		0AB12D6C205A473800B8E2F0 /* WhatsUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */; };
 		0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */; };
 		0ADA7EF32046BFAF00967784 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA7EF22046BFAF00967784 /* Download.swift */; };
 		0ADAE3602005B698006CB2DE /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADAE35E2005B663006CB2DE /* HandyJSON.framework */; };
@@ -145,6 +146,7 @@
 		0AA76DCB2054E93F00DA64B4 /* RegionCityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCityTableViewController.swift; sourceTree = "<group>"; };
 		0AA76DCD20568A8200DA64B4 /* zh-LocList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "zh-LocList.xml"; sourceTree = "<group>"; };
 		0AA76DCE20568A8200DA64B4 /* en-LocList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "en-LocList.xml"; sourceTree = "<group>"; };
+		0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsUpTableViewController.swift; sourceTree = "<group>"; };
 		0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPrivacyViewController.swift; sourceTree = "<group>"; };
 		0ADA7EF22046BFAF00967784 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		0ADAE35E2005B663006CB2DE /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = SOURCE_ROOT; };
@@ -397,6 +399,7 @@
 				0AA76DC12053CCEF00DA64B4 /* RegionTableViewController.swift */,
 				0AA76DC92054E91D00DA64B4 /* RegionStateTableViewController.swift */,
 				0AA76DCB2054E93F00DA64B4 /* RegionCityTableViewController.swift */,
+				0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
 				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,
 				0A20200E200E4368009941EF /* ExtensionString.swift in Sources */,
+				0AB12D6C205A473800B8E2F0 /* WhatsUpTableViewController.swift in Sources */,
 				0A3C250020048E7B00CD6FD0 /* leopard.xcdatamodeld in Sources */,
 				0A04A08120108A8A00E372EC /* ExtensionUIViewController.swift in Sources */,
 				0A158F50202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift in Sources */,

@@ -70,7 +70,7 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             } else if cell == regionCell {
                 loadRegionView()
             } else if cell == whatsupCell {
-                
+                loadWhatsUpView()
             }
             cell.isSelected = false
         }
@@ -99,6 +99,14 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
         regionTVC.regionString = syprofil.spfregion
         let regionNC = UINavigationController(rootViewController: regionTVC)
         self.present(regionNC, animated: true, completion: nil)
+    }
+    
+    func loadWhatsUpView() {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let whatsUpTVC = storyBoard.instantiateViewController(withIdentifier: "WhatsUpTableViewController") as! WhatsUpTableViewController
+        whatsUpTVC.syprofil = syprofil
+        let whatsUpNC = UINavigationController(rootViewController: whatsUpTVC)
+        self.present(whatsUpNC, animated: true, completion: nil)
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
