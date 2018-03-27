@@ -23,8 +23,8 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     var countryRegions: [CountryRegion] = []
     var syusrinf: Syusrinf!
     var syprofil: Syprofil!
-    var flag = ""
-    var photoImage: UIImage?
+    
+    var output: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +58,18 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             }
         }
         tableView.reloadData()
+        
+        //FIXME: - callback test
+        if let output = output {
+            print("--Success Calback Output: \(output)")
+            self.output = nil
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             if cell == portraitCell {
-                
+                loadPhotoView()
             } else if cell == nameCell {
                 loadNameView()
             } else if cell == genderCell {
@@ -75,6 +81,19 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
             }
             cell.isSelected = false
         }
+    }
+    
+    func loadPhotoView() {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let photoVC = storyBoard.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
+        //FIXME: - callback test
+        photoVC.photoVCSuccHandler = { [weak self]message in
+            self?.output = message
+            print("--SuccHandler is Called")
+        }
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(photoVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     func loadNameView() {
@@ -189,22 +208,8 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     }
     
     
-    //FIXME: - choose image
-    func photoLib() {
-        flag = "PHOTO"
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-            self.present(picker, animated: true, completion: nil)
-        } else {
-            self.view.makeToast("no permission to read photoLibrary")
-        }
-    }
-    
     //FIXME: - choose video
     func videoLib() {
-        flag = "VIDEO"
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let picker = UIImagePickerController()
             picker.delegate = self
@@ -220,61 +225,17 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     //FIXME: - upload delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print(info)
-        if flag == "PHOTO" {
-            let pickerImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            guard let jpegData = UIImageJPEGRepresentation(pickerImage, 1) else {
-                return
-            }
-            photoImage = pickerImage
-            uploadImage(imageData: jpegData)
-            self.dismiss(animated: true, completion: nil)
-            
-//            let outpath = NSHomeDirectory() + "/Documents/00000000.mp4"
-//            let pathString = NSHomeDirectory() + "/Documents/IMG_7488.MOV"
-//            print("--video upload test " + pathString)
-//            transformMoive(inputPath: pathString, outputPath: outpath)
-            
-        } else {
-            let videoURL = info[UIImagePickerControllerMediaURL] as! URL
-            print("--video address: \(videoURL.path)")
-            let outpath = NSHomeDirectory() + "/Documents/\(Date().timeIntervalSince1970).mp4"
-            transformMoive(inputPath: videoURL.path, outputPath: outpath)
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    //FIXME: - upload image
-    func uploadImage(imageData: Data) {
-        self.navigationController?.view.makeToastActivity(.center)
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
-                multipartFormData.append(imageData, withName: "FILE", fileName: ".JPG", mimeType: "image/jpeg")
-            },
-            to: SERVER + "attachment/upload.action",
-            method: .post,
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    upload.uploadProgress { progress in // main queue by default
-                        print("上传完成\(String(format: "%.0f", progress.fractionCompleted * 100))%")
-                    }
-                    upload.responseString { response in
-                        if let remote = Response<String>.data(response) {
-                            self.portraitImageView.image = self.photoImage
-                            print(remote)
-                            self.navigationController?.view.hideToastActivity()
-
-                        } else if let error = Response<String>.error(response) {
-                            self.navigationController?.view.hideToastActivity()
-                            self.view.makeToast(error)
-                        }
-                    }
-                case .failure(let encodingError):
-                    self.navigationController?.view.hideToastActivity()
-                    self.view.makeToast(encodingError.localizedDescription)
-                }
-            }
-        )
+        
+//        let outpath = NSHomeDirectory() + "/Documents/00000000.mp4"
+//        let pathString = NSHomeDirectory() + "/Documents/IMG_7488.MOV"
+//        print("--video upload test " + pathString)
+//        transformMoive(inputPath: pathString, outputPath: outpath)
+        
+        let videoURL = info[UIImagePickerControllerMediaURL] as! URL
+        print("--video address: \(videoURL.path)")
+        let outpath = NSHomeDirectory() + "/Documents/\(Date().timeIntervalSince1970).mp4"
+        transformMoive(inputPath: videoURL.path, outputPath: outpath)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //FIXME: - upload video

@@ -315,6 +315,98 @@ and can opt out at any time</string>
             </objects>
             <point key="canvasLocation" x="-1546.4000000000001" y="178.56071964017991"/>
         </scene>
+        <!--PHOTO-->
+        <scene sceneID="9RD-1k-WTt">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewController" id="8Ph-gp-pUy" customClass="PhotoViewController" customModule="leopard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jir-Va-8c8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qw-lR-ELQ">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3Si-zv-mTY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PHOTO" id="wM8-F4-LCu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Dne-Pb-JY8">
+                            <connections>
+                                <action selector="openPhotoLib:" destination="8Ph-gp-pUy" id="lie-iy-xdF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="5qw-lR-ELQ" id="UMQ-bf-4XU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PF1-KX-y4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2874.4000000000001" y="875.71214392803608"/>
+        </scene>
+        <!--Photo Edit View Controller-->
+        <scene sceneID="BZH-JE-Shj">
+            <objects>
+                <viewController storyboardIdentifier="PhotoEditViewController" id="8jf-4e-end" customClass="PhotoEditViewController" customModule="leopard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wxo-KN-ExM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbi-u5-fmi">
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxc-zL-nzs">
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="2VX-uS-UY8"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pr6-D4-6id" appends="YES" id="rcI-oh-u7w"/>
+                            <outletCollection property="gestureRecognizers" destination="RVf-7f-q2c" appends="YES" id="ggG-iM-v3b"/>
+                        </connections>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="CANCEL" id="95g-aw-Vc5">
+                            <connections>
+                                <action selector="cancel:" destination="8jf-4e-end" id="kB5-dF-by0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="kKQ-KW-gy3"/>
+                        <barButtonItem title="DONE" id="ux6-eU-Qem">
+                            <connections>
+                                <action selector="done:" destination="8jf-4e-end" id="xwU-je-AJq"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="jbi-u5-fmi" id="WtN-OR-v3K"/>
+                        <outlet property="maskView" destination="yxc-zL-nzs" id="yfr-Jh-EPw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S4M-N4-BEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="pr6-D4-6id">
+                    <connections>
+                        <action selector="onPanGestureRecognized:" destination="8jf-4e-end" id="Fjz-Ta-56V"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="RVf-7f-q2c">
+                    <connections>
+                        <action selector="onPinchGestureRecognized:" destination="8jf-4e-end" id="V9p-Vx-WUI"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2874.4000000000001" y="1544.9775112443779"/>
+        </scene>
         <!--NAME-->
         <scene sceneID="skO-bb-xGJ">
             <objects>

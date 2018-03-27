@@ -52,6 +52,8 @@
 		0AA76DD020568A8200DA64B4 /* en-LocList.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76DCE20568A8200DA64B4 /* en-LocList.xml */; };
 		0AB12D6C205A473800B8E2F0 /* WhatsUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */; };
 		0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */; };
+		0AC9463B205F5543003C67D1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9463A205F5543003C67D1 /* PhotoViewController.swift */; };
+		0AC9463D205F9B1E003C67D1 /* PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9463C205F9B1E003C67D1 /* PhotoEditViewController.swift */; };
 		0ADA7EF32046BFAF00967784 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA7EF22046BFAF00967784 /* Download.swift */; };
 		0ADAE3602005B698006CB2DE /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADAE35E2005B663006CB2DE /* HandyJSON.framework */; };
 		0ADAE3612005B698006CB2DE /* HandyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADAE35E2005B663006CB2DE /* HandyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -148,6 +150,8 @@
 		0AA76DCE20568A8200DA64B4 /* en-LocList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "en-LocList.xml"; sourceTree = "<group>"; };
 		0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsUpTableViewController.swift; sourceTree = "<group>"; };
 		0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPrivacyViewController.swift; sourceTree = "<group>"; };
+		0AC9463A205F5543003C67D1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		0AC9463C205F9B1E003C67D1 /* PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewController.swift; sourceTree = "<group>"; };
 		0ADA7EF22046BFAF00967784 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		0ADAE35E2005B663006CB2DE /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = SOURCE_ROOT; };
 		0ADAE3662005B764006CB2DE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 				0AA76DC92054E91D00DA64B4 /* RegionStateTableViewController.swift */,
 				0AA76DCB2054E93F00DA64B4 /* RegionCityTableViewController.swift */,
 				0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */,
+				0AC9463A205F5543003C67D1 /* PhotoViewController.swift */,
+				0AC9463C205F9B1E003C67D1 /* PhotoEditViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 				0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
 				0A2712D7203854A80028BD37 /* ProfileTableViewController.swift in Sources */,
+				0AC9463B205F5543003C67D1 /* PhotoViewController.swift in Sources */,
 				0AA76DC22053CCEF00DA64B4 /* RegionTableViewController.swift in Sources */,
 				0A158F3E2028C81000853AA0 /* ModPhoneVerifyViewController.swift in Sources */,
 				0AA76DCA2054E91D00DA64B4 /* RegionStateTableViewController.swift in Sources */,
@@ -630,6 +637,7 @@
 				0A3C250020048E7B00CD6FD0 /* leopard.xcdatamodeld in Sources */,
 				0A04A08120108A8A00E372EC /* ExtensionUIViewController.swift in Sources */,
 				0A158F50202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift in Sources */,
+				0AC9463D205F9B1E003C67D1 /* PhotoEditViewController.swift in Sources */,
 				0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */,
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
 				0A5B4D9920316153006A0D81 /* ModPasswordViewController.swift in Sources */,
