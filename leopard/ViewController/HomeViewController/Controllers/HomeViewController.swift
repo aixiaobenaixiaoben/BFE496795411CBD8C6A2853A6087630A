@@ -10,12 +10,21 @@ import UIKit
 import Alamofire
 
 class HomeViewController: UITabBarController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if UserDefaults.standard.string(forKey: "LANGUAGE") == nil {
+            //TODO: - 取系统语言-简体中文-英文-默认英文
+            UserDefaults.standard.set("EN-US", forKey: "LANGUAGE")
+        }
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         if !LoginViewController.isLogin {
-            if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
+            if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string), let language = UserDefaults.standard.string(forKey: "LANGUAGE") {
+                syusrinf.language = language
                 Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
                     response in
                     if let data = Response<Syusrinf>.data(response) {

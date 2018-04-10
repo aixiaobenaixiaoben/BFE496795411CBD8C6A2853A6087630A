@@ -75,6 +75,8 @@ class CTableViewController: UITableViewController {
                 loadProfileView(tableView, indexPath, cell)
             } else if identifier == "NOTIFICATION" {
                 loadNotificationView(tableView, indexPath, cell)
+            } else if identifier == "LANGUAGE" {
+                loadLanguageView(tableView, indexPath, cell)
             } else if identifier == "PHONE" {
                 loadPhoneView(tableView, indexPath, cell)
             } else if identifier == "PASSWORD" {
@@ -102,6 +104,13 @@ class CTableViewController: UITableViewController {
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(notiTVC, animated: true)
         self.hidesBottomBarWhenPushed = false
+    }
+    
+    func loadLanguageView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {
+        let storyBoard = UIStoryboard(name: "C", bundle: nil)
+        let langTVC = storyBoard.instantiateViewController(withIdentifier: "LanguageTableViewController") as! LanguageTableViewController
+        let langNC = UINavigationController(rootViewController: langTVC)
+        self.present(langNC, animated: true, completion: nil)
     }
     
     func loadPhoneView(_ tableView: UITableView, _ indexPath: IndexPath, _ cell: UITableViewCell) {

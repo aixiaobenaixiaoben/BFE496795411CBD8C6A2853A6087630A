@@ -38,6 +38,7 @@
 		0A61A9222004CD5200302336 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A656DEF2024822300E72E6E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A656DEE2024822300E72E6E /* Toast.swift */; };
 		0A6C98A2202D6D5100314146 /* NotifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C98A1202D6D5100314146 /* NotifiTableViewController.swift */; };
+		0A720144207A53B500388EFB /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A720143207A53B500388EFB /* LanguageTableViewController.swift */; };
 		0AA76DB8204BEAE800DA64B4 /* Syprofil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DB7204BEAE800DA64B4 /* Syprofil.swift */; };
 		0AA76DBA204BECB300DA64B4 /* Sydicinf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */; };
 		0AA76DBC2050075500DA64B4 /* NameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */; };
@@ -136,6 +137,7 @@
 		0A61A91D2004CD4100302336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		0A656DEE2024822300E72E6E /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0A6C98A1202D6D5100314146 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
+		0A720143207A53B500388EFB /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
 		0AA76DB7204BEAE800DA64B4 /* Syprofil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syprofil.swift; sourceTree = "<group>"; };
 		0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sydicinf.swift; sourceTree = "<group>"; };
 		0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewController.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				0AF8CA6B20235D2B00B0A687 /* ModPhoneViewController.swift */,
 				0A158F3D2028C81000853AA0 /* ModPhoneVerifyViewController.swift */,
 				0A6C98A1202D6D5100314146 /* NotifiTableViewController.swift */,
+				0A720143207A53B500388EFB /* LanguageTableViewController.swift */,
 				0A5B4D9820316153006A0D81 /* ModPasswordViewController.swift */,
 				0A2712D6203854A80028BD37 /* ProfileTableViewController.swift */,
 				0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */,
@@ -638,6 +641,7 @@
 				0A04A08120108A8A00E372EC /* ExtensionUIViewController.swift in Sources */,
 				0A158F50202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift in Sources */,
 				0AC9463D205F9B1E003C67D1 /* PhotoEditViewController.swift in Sources */,
+				0A720144207A53B500388EFB /* LanguageTableViewController.swift in Sources */,
 				0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */,
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
 				0A5B4D9920316153006A0D81 /* ModPasswordViewController.swift in Sources */,

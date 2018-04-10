@@ -42,10 +42,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
+        guard let language = UserDefaults.standard.string(forKey: "LANGUAGE") else {
+            return
+        }
         loginButton.isEnabled = false
         let syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         syusrinf.suipaswrd = suipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()
+        syusrinf.language = language
         
         Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
             response in
@@ -66,6 +70,10 @@ class LoginViewController: UIViewController {
     }
     
     static func loginAutomatic(_ syusrinf: Syusrinf) {
+        guard let language = UserDefaults.standard.string(forKey: "LANGUAGE") else {
+            return
+        }
+        syusrinf.language = language
         Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
             response in
             if let data = Response<Syusrinf>.data(response) {
