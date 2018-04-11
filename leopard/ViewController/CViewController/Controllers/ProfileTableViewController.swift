@@ -28,8 +28,10 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: - 根据用户选择的app语言确定加载地理文件
-        let locFilePath = "zh-LocList"
+        var locFilePath = "en-LocList"
+        if let lang = UserDefaults.standard.string(forKey: "LANGUAGE"), lang == "ZH-CN" {
+            locFilePath = "zh-LocList"
+        }
         if let path = Bundle.main.url(forResource: locFilePath, withExtension: "xml") {
             if let parser = XMLParser(contentsOf: path) {
                 parser.delegate = self

@@ -14,8 +14,14 @@ class HomeViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.string(forKey: "LANGUAGE") == nil {
-            //TODO: - 取系统语言-简体中文-英文-默认英文
-            UserDefaults.standard.set("EN-US", forKey: "LANGUAGE")
+            var lang = "EN-US"
+            if let region = Locale.current.regionCode {
+                let sysLang = Locale.preferredLanguages[0].dropLast(region.count + 1)
+                if sysLang == "zh-Hans" {
+                    lang = "ZH-CN"
+                }
+            }
+            UserDefaults.standard.set(lang, forKey: "LANGUAGE")
         }
     }
 
