@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AVFoundation
 
 typealias PhotoVCSuccHandlerBlock = (_ message: String) -> Void
 
@@ -27,7 +28,28 @@ class PhotoViewController: UIViewController, UINavigationControllerDelegate, UII
             }
         }
     }
-    @IBAction func openPhotoLib(_ sender: Any) {
+    
+    @IBAction func chooseAction(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let takePhoto = UIAlertAction(title: NSLocalizedString("TAKE-PHOTO", comment: "take photo action"), style: .default) { action in
+            self.takePhoto()
+        }
+        let choosePhoto = UIAlertAction(title: NSLocalizedString("CHOOSE-PHOTO", comment: "choose photo action"), style: .default) { action in
+            self.openPhotoLib()
+        }
+        let savePhoto = UIAlertAction(title: NSLocalizedString("SAVE-PHOTO", comment: "save photo action"), style: .default) { action in
+            self.savePhoto()
+        }
+        let cancel = UIAlertAction(title: NSLocalizedString("CANCEL", comment: "cancel action"), style: .cancel, handler: nil)
+        
+        alert.addAction(takePhoto)
+        alert.addAction(choosePhoto)
+        alert.addAction(savePhoto)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openPhotoLib() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let picker = UIImagePickerController()
             picker.delegate = self
@@ -36,13 +58,48 @@ class PhotoViewController: UIViewController, UINavigationControllerDelegate, UII
 //            picker.allowsEditing = true
             self.present(picker, animated: true, completion: nil)
         } else {
-            self.view.makeToast("no permission to read photoLibrary")
+            self.view.makeToast(NSLocalizedString("PHOTOLIBRARY-IS-UNAVAILABLE", comment: "photoLibrary is unavailable"))
+        }
+    }
+    
+    func takePhoto() {
+        if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .authorized {
+            takePicture()
+        } else {
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { (granted: Bool) in
+                if granted {
+                    self.takePicture()
+                } else {
+                    DispatchQueue.main.async {
+                        self.view.makeToast(NSLocalizedString("NO-PERMISSION-TO-USE-CAMERA", comment: "no permission to use camera"))
+                    }
+                }
+            }
+        }
+    }
+
+    func takePicture() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = .camera
+            self.present(picker, animated: true, completion: nil)
+        } else {
+            self.view.makeToast(NSLocalizedString("CAMERA-IS-UNAVAILABLE", comment: "camera is unavailable"))
+        }
+    }
+    
+    func savePhoto() {
+        if let image = photoImageView.image {
+            saveImage(image)
+        } else {
+            self.view.makeToast(NSLocalizedString("NO-PHOTO-TO-BE-SAVED", comment: "no photo to be saved"))
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        //TODO: - 不编辑模式
+        //MARK: - 不编辑模式
 //        let pickerImage = info[UIImagePickerControllerOriginalImage] as! UIImage
 //        guard let jpegData = UIImageJPEGRepresentation(pickerImage, 1) else {
 //            return
@@ -50,27 +107,49 @@ class PhotoViewController: UIViewController, UINavigationControllerDelegate, UII
 //        uploadImage(imageData: jpegData)
 //        self.dismiss(animated: true, completion: nil)
         
-        //TODO: - 系统编辑模式
+        //MARK: - 系统编辑模式
 //        let pickerImage = info[UIImagePickerControllerEditedImage] as! UIImage
 //        guard let jpegData = UIImageJPEGRepresentation(pickerImage, 1) else {
 //            return
 //        }
-////        photoImage = pickerImage
 //        uploadImage(imageData: jpegData)
 //        self.dismiss(animated: true, completion: nil)
         
-        //TODO: - 自定义编辑模式
-        let pickerImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let storyBoard = UIStoryboard(name: "C", bundle: nil)
-        let photoEditVC = storyBoard.instantiateViewController(withIdentifier: "PhotoEditViewController") as! PhotoEditViewController
-        //FIXME: - callback test
-        photoEditVC.photoEditVCSuccHandler = { [weak self]message in
-            if let callBack = self?.photoVCSuccHandler {
-                callBack(message)
+        if picker.sourceType == .photoLibrary {
+            //MARK: - 自定义编辑模式
+            let pickerImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            let storyBoard = UIStoryboard(name: "C", bundle: nil)
+            let photoEditVC = storyBoard.instantiateViewController(withIdentifier: "PhotoEditViewController") as! PhotoEditViewController
+            //FIXME: - callback test
+            photoEditVC.photoEditVCSuccHandler = { [weak self]message in
+                if let callBack = self?.photoVCSuccHandler {
+                    callBack(message)
+                }
             }
+            photoEditVC.image = pickerImage
+            picker.pushViewController(photoEditVC, animated: true)
+            
+        } else if picker.sourceType == .camera {
+            let pickerImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            guard let jpegData = UIImageJPEGRepresentation(pickerImage, 1) else {
+                return
+            }
+            saveImage(pickerImage)
+            uploadImage(imageData: jpegData)
+            self.dismiss(animated: true, completion: nil)
         }
-        photoEditVC.image = pickerImage
-        picker.pushViewController(photoEditVC, animated: true)
+    }
+    
+    func saveImage(_ image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            self.view.makeToast(error.localizedDescription)
+        } else {
+            self.view.makeToast(NSLocalizedString("SAVED", comment: "saved"))
+        }
     }
     
     func uploadImage(imageData: Data) {

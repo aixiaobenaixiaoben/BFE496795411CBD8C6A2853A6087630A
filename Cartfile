@@ -1,4 +1,4 @@
 github "Alamofire/Alamofire" ~> 4.5
-github "alibaba/HandyJSON" ~> 1.8.0
+github "alibaba/HandyJSON" ~> 4.1.1
 
 

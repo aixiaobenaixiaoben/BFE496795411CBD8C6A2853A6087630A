@@ -48,5 +48,11 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>APPLICATION-NEEDS-LOCATION</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>APPLICATION-NEEDS-READ-PHOTO</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>APPLICATION-NEEDS-WRITE-PHOTO</string>
+	<key>NSCameraUsageDescription</key>
+	<string>APPLICATION-NEEDS-TAKE-PHOTO</string>
 </dict>
 </plist>
