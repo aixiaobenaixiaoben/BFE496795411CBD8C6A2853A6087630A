@@ -41,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
-        if let syusrinfString = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: syusrinfString) {
+        if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
             print("--log in when applicationWillEnterForeground")
-            LoginViewController.loginAutomatic(syusrinf)
+            LoginViewController.login(syusrinf: syusrinf, succHandler: nil, failHandler: nil, requestHandler: nil)
         }
     }
 

@@ -29,25 +29,22 @@ class HomeViewController: UITabBarController {
         super.viewDidAppear(true)
         
         if !LoginViewController.isLogin {
-            if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string), let language = UserDefaults.standard.string(forKey: "LANGUAGE") {
-                syusrinf.language = language
-                Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
-                    response in
-                    if let data = Response<Syusrinf>.data(response) {
-                        data.suipaswrd = syusrinf.suipaswrd
-                        UserDefaults.standard.set(data.toJSONString(), forKey: "SYUSRINF")
-                        print("--log in after HomeViewController viewdidappear")
-                        print(data.toJSONString(prettyPrint: true)!)
-                        LoginViewController.isLogin = true
-                        
+            if let string = UserDefaults.standard.string(forKey: "SYUSRINF"), let syusrinf = Syusrinf.deserialize(from: string) {
+                
+                print("--log in after HomeViewController viewdidappear")
+                LoginViewController.login(
+                    syusrinf: syusrinf,
+                    succHandler: { user in
                         if let aVC = self.selectedViewController as? AViewController {
                             aVC.reloadData()
                         }
-                    } else  {
-                        UserDefaults.standard.set(nil, forKey: "SYUSRINF")
+                    },
+                    failHandler: { error in
                         self.loadLoginView()
-                    }
-                }
+                    },
+                    requestHandler: nil
+                )
+                
             } else {
                 loadLoginView()
             }

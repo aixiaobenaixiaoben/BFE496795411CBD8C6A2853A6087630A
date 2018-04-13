@@ -56,27 +56,22 @@ class LanguageTableViewController: UITableViewController {
             self.dismiss(animated: true, completion: nil)
             return
         }
-
         self.navigationItem.rightBarButtonItem?.isEnabled = false
-        syusrinf.language = newLanguage
-        Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
-            if let data = Response<Syusrinf>.data(response) {
-                data.suipaswrd = syusrinf.suipaswrd
-                UserDefaults.standard.set(data.toJSONString(), forKey: "SYUSRINF")
-                print(data.toJSONString(prettyPrint: true)!)
-                LoginViewController.isLogin = true
-                
-                UserDefaults.standard.set(newLanguage, forKey: "LANGUAGE")
+        
+        UserDefaults.standard.set(newLanguage, forKey: "LANGUAGE")
+        LoginViewController.login(
+            syusrinf: syusrinf,
+            succHandler: { user in
                 self.dismiss(animated: true, completion: nil)
-                
-            } else if let error = Response<String>.error(response) {
-                LoginViewController.isLogin = false
-                UserDefaults.standard.set(nil, forKey: "SYUSRINF")
+            },
+            failHandler: { error in
+                UserDefaults.standard.set(oldLanguage, forKey: "LANGUAGE")
                 self.view.makeToast(error)
-                print("Error: " + error)
+            },
+            requestHandler: {
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
             }
-            self.navigationItem.rightBarButtonItem?.isEnabled = true
-        }
+        )
     }
     
 }

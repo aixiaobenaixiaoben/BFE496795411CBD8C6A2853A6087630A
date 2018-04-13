@@ -42,48 +42,50 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-        guard let language = UserDefaults.standard.string(forKey: "LANGUAGE") else {
-            return
-        }
         loginButton.isEnabled = false
         let syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         syusrinf.suipaswrd = suipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()
+        
+        LoginViewController.login(
+            syusrinf: syusrinf,
+            succHandler: { user in
+                self.dismiss(animated: true, completion: nil)
+            },
+            failHandler: { error in
+                self.messageLabel.text = error
+                self.loginButton.isEnabled = true
+            },
+            requestHandler: nil
+        )
+    }
+    
+    static func login(syusrinf: Syusrinf, succHandler: ((Syusrinf) -> Void)?, failHandler: ((String) -> Void)?, requestHandler: (() -> Void)?) {
+        
+        guard let language = UserDefaults.standard.string(forKey: "LANGUAGE") else { return }
         syusrinf.language = language
         
-        Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
-            response in
+        Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString { response in
             
             if let data = Response<Syusrinf>.data(response) {
                 data.suipaswrd = syusrinf.suipaswrd
                 UserDefaults.standard.set(data.toJSONString(), forKey: "SYUSRINF")
-                print(data.toJSONString(prettyPrint: true)!)
                 LoginViewController.isLogin = true
-                self.dismiss(animated: true, completion: nil)
+                print(data.toJSONString(prettyPrint: true)!)
+                if let handler = succHandler {
+                    handler(data)
+                }
                 
             } else if let error = Response<String>.error(response) {
-                self.messageLabel.text = error
-                self.loginButton.isEnabled = true
-                print("Error: " + error)
-            }
-        }
-    }
-    
-    static func loginAutomatic(_ syusrinf: Syusrinf) {
-        guard let language = UserDefaults.standard.string(forKey: "LANGUAGE") else {
-            return
-        }
-        syusrinf.language = language
-        Alamofire.request(SERVER + "user/login.action", method: .post, parameters: syusrinf.toJSON()).responseString {
-            response in
-            if let data = Response<Syusrinf>.data(response) {
-                data.suipaswrd = syusrinf.suipaswrd
-                UserDefaults.standard.set(data.toJSONString(), forKey: "SYUSRINF")
-                print(data.toJSONString(prettyPrint: true)!)
-                LoginViewController.isLogin = true
-            } else  {
                 LoginViewController.isLogin = false
-                UserDefaults.standard.set(nil, forKey: "SYUSRINF")
+                print("Error: " + error)
+                if let handler = failHandler {
+                    handler(error)
+                }
+            }
+            
+            if let handler = requestHandler {
+                handler()
             }
         }
     }
