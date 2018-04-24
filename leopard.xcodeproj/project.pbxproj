@@ -32,13 +32,13 @@
 		0A4C8CBA200F572D002EFD52 /* Syvrymbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C8CB9200F572D002EFD52 /* Syvrymbl.swift */; };
 		0A4E3E92200B616400D1B685 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E3E91200B616400D1B685 /* Login.storyboard */; };
 		0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9D200B671A00D1B685 /* AViewController.swift */; };
-		0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9F200B67FA00D1B685 /* BViewController.swift */; };
 		0A5B4D9920316153006A0D81 /* ModPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B4D9820316153006A0D81 /* ModPasswordViewController.swift */; };
 		0A61A9212004CD5200302336 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; };
 		0A61A9222004CD5200302336 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A656DEF2024822300E72E6E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A656DEE2024822300E72E6E /* Toast.swift */; };
 		0A6C98A2202D6D5100314146 /* NotifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C98A1202D6D5100314146 /* NotifiTableViewController.swift */; };
 		0A720144207A53B500388EFB /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A720143207A53B500388EFB /* LanguageTableViewController.swift */; };
+		0A788FB32085E550007576B6 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A788FB22085E550007576B6 /* ResultsTableViewController.swift */; };
 		0AA76DB8204BEAE800DA64B4 /* Syprofil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DB7204BEAE800DA64B4 /* Syprofil.swift */; };
 		0AA76DBA204BECB300DA64B4 /* Sydicinf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */; };
 		0AA76DBC2050075500DA64B4 /* NameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */; };
@@ -53,6 +53,9 @@
 		0AA76DD020568A8200DA64B4 /* en-LocList.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76DCE20568A8200DA64B4 /* en-LocList.xml */; };
 		0AB12D6C205A473800B8E2F0 /* WhatsUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */; };
 		0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */; };
+		0ABA693220846EB000677C0D /* BTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA693120846EB000677C0D /* BTableViewController.swift */; };
+		0ABA69342084721900677C0D /* B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABA69332084721900677C0D /* B.storyboard */; };
+		0ABA69362084775000677C0D /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA69352084775000677C0D /* AddTableViewController.swift */; };
 		0AC9463B205F5543003C67D1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9463A205F5543003C67D1 /* PhotoViewController.swift */; };
 		0AC9463D205F9B1E003C67D1 /* PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9463C205F9B1E003C67D1 /* PhotoEditViewController.swift */; };
 		0ADA7EF32046BFAF00967784 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA7EF22046BFAF00967784 /* Download.swift */; };
@@ -132,12 +135,12 @@
 		0A4C8CB9200F572D002EFD52 /* Syvrymbl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syvrymbl.swift; sourceTree = "<group>"; };
 		0A4E3E91200B616400D1B685 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0A4E3E9D200B671A00D1B685 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
-		0A4E3E9F200B67FA00D1B685 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		0A5B4D9820316153006A0D81 /* ModPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModPasswordViewController.swift; sourceTree = "<group>"; };
 		0A61A91D2004CD4100302336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		0A656DEE2024822300E72E6E /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0A6C98A1202D6D5100314146 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
 		0A720143207A53B500388EFB /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
+		0A788FB22085E550007576B6 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		0AA76DB7204BEAE800DA64B4 /* Syprofil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syprofil.swift; sourceTree = "<group>"; };
 		0AA76DB9204BECB300DA64B4 /* Sydicinf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sydicinf.swift; sourceTree = "<group>"; };
 		0AA76DBB2050075500DA64B4 /* NameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +155,9 @@
 		0AA76DCE20568A8200DA64B4 /* en-LocList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "en-LocList.xml"; sourceTree = "<group>"; };
 		0AB12D6B205A473800B8E2F0 /* WhatsUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsUpTableViewController.swift; sourceTree = "<group>"; };
 		0AB7434E20130BF30062F7EE /* TermsPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPrivacyViewController.swift; sourceTree = "<group>"; };
+		0ABA693120846EB000677C0D /* BTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTableViewController.swift; sourceTree = "<group>"; };
+		0ABA69332084721900677C0D /* B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = B.storyboard; sourceTree = "<group>"; };
+		0ABA69352084775000677C0D /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		0AC9463A205F5543003C67D1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		0AC9463C205F9B1E003C67D1 /* PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewController.swift; sourceTree = "<group>"; };
 		0ADA7EF22046BFAF00967784 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
@@ -352,7 +358,9 @@
 		0A4E3E97200B65D100D1B685 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E3E9F200B67FA00D1B685 /* BViewController.swift */,
+				0ABA693120846EB000677C0D /* BTableViewController.swift */,
+				0ABA69352084775000677C0D /* AddTableViewController.swift */,
+				0A788FB22085E550007576B6 /* ResultsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 		0A4E3E99200B65EA00D1B685 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0ABA69332084721900677C0D /* B.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,6 +600,7 @@
 				0A3C250520048E7B00CD6FD0 /* LaunchScreen.storyboard in Resources */,
 				0AA76DD020568A8200DA64B4 /* en-LocList.xml in Resources */,
 				0A3C250220048E7B00CD6FD0 /* Assets.xcassets in Resources */,
+				0ABA69342084721900677C0D /* B.storyboard in Resources */,
 				0AA76DCF20568A8200DA64B4 /* zh-LocList.xml in Resources */,
 				0A3C24FD20048E7B00CD6FD0 /* Main.storyboard in Resources */,
 			);
@@ -622,6 +632,7 @@
 				0AA76DB8204BEAE800DA64B4 /* Syprofil.swift in Sources */,
 				0A09D57D200CE767000C487E /* RegisterEndViewController.swift in Sources */,
 				0ADAE3692005D1AF006CB2DE /* Syusrinf.swift in Sources */,
+				0ABA69362084775000677C0D /* AddTableViewController.swift in Sources */,
 				0A4C8CBA200F572D002EFD52 /* Syvrymbl.swift in Sources */,
 				0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
@@ -635,6 +646,7 @@
 				0AA76DC42053D13800DA64B4 /* CountryRegion.swift in Sources */,
 				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
 				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,
+				0ABA693220846EB000677C0D /* BTableViewController.swift in Sources */,
 				0A20200E200E4368009941EF /* ExtensionString.swift in Sources */,
 				0AB12D6C205A473800B8E2F0 /* WhatsUpTableViewController.swift in Sources */,
 				0A3C250020048E7B00CD6FD0 /* leopard.xcdatamodeld in Sources */,
@@ -642,7 +654,6 @@
 				0A158F50202A9BB100853AA0 /* UINavigationBarBackButtonHandler.swift in Sources */,
 				0AC9463D205F9B1E003C67D1 /* PhotoEditViewController.swift in Sources */,
 				0A720144207A53B500388EFB /* LanguageTableViewController.swift in Sources */,
-				0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */,
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
 				0A5B4D9920316153006A0D81 /* ModPasswordViewController.swift in Sources */,
 				0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */,
@@ -657,6 +668,7 @@
 				0AB7434F20130BF30062F7EE /* TermsPrivacyViewController.swift in Sources */,
 				0A656DEF2024822300E72E6E /* Toast.swift in Sources */,
 				0AA76DBE2050D0A000DA64B4 /* GenderTableViewController.swift in Sources */,
+				0A788FB32085E550007576B6 /* ResultsTableViewController.swift in Sources */,
 				0A09D57F200CE788000C487E /* ResetApplyViewController.swift in Sources */,
 				0AA76DC82054C21500DA64B4 /* State.swift in Sources */,
 				0ADA7EF32046BFAF00967784 /* Download.swift in Sources */,
@@ -766,12 +778,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -819,10 +832,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
