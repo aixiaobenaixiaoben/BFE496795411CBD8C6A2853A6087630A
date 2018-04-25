@@ -23,7 +23,7 @@ class ResultsTableViewController: UITableViewController {
                 let searchShowText = NSLocalizedString("SEARCH", comment: "Label prefix to Search contact") + ":" + searchText
                 let searchAttributeString = NSMutableAttributedString(string: searchShowText)
                 let searchRange = (searchShowText as NSString).range(of: searchText)
-                searchAttributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: searchRange)
+                searchAttributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.sysBlue, range: searchRange)
                 searchCell.textLabel?.attributedText = searchAttributeString
             }
         }
@@ -101,7 +101,7 @@ class ResultsTableViewController: UITableViewController {
         let moreShowText = NSLocalizedString("SEARCH", comment: "Label prefix to Search contact") + " " + searchText
         let moreAttributeString = NSMutableAttributedString(string: moreShowText)
         let moreRange = (moreShowText as NSString).range(of: searchText)
-        moreAttributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: moreRange)
+        moreAttributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.sysBlue, range: moreRange)
         moreCell.textLabel?.attributedText = moreAttributeString
         
         //TODO: - find contact then open user detail
